@@ -1,0 +1,23 @@
+SF Symbols artwork
+==================
+
+The PNG files in this directory are SF Symbols, drawn by macOS through AppKit and
+recoloured and resized by tools/sf_symbols.swift. Apple publishes no artwork files and no
+licence file to copy alongside them, so this notice records the terms instead.
+
+SF Symbols are system-provided images under the Xcode and Apple SDKs Agreement. Section
+2.11 of that agreement licenses them for use in developing applications for Apple-branded
+products, which is what this repository is part of. They are not redistributable for any
+other purpose: anyone reusing this gem outside that context should show the SF Symbols
+names alone and leave these files behind.
+
+Apple's published guidance for the set also asks that the symbols, and glyphs
+substantially or confusingly similar to them, are not used in app icons, logos, or any
+other trademark-related use, and that certain symbols standing for Apple features and
+products are used only to refer to those features and products. Nothing here is drawn on
+an icon or a logo. One symbol in the set names an Apple feature — `touchid`, which the
+`:fingerprint` concept uses — and on an Apple platform, where these names are the only
+ones drawn, that is the feature it refers to. The generic `smartphone` is used for
+`:mobile` in preference to `iphone` for the same reason.
+
+Reference: https://developer.apple.com/sf-symbols/

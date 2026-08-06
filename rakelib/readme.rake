@@ -1,55 +1,23 @@
-require 'fileutils'
-require 'open-uri'
+# Marks a symbol the rendering machine is older than, and explains the mark under the table.
+FALLBACK_MARK = '†'
+FALLBACK_NOTE = "#{FALLBACK_MARK} Newer than the macOS that drew this table, which renders " \
+                'the SF Symbols 5 set; the name resolves, the picture is on Apple’s site.'
 
-# Where the artwork in each column comes from, pinned so a regenerated README shows
-# what this one shows. SF Symbols is deliberately absent: Apple's licence keeps the
-# symbols on Apple platforms, so the README prints the name and links to Apple.
-ARTWORK = {
-  bootstrap: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/NAME.svg',
-  android: 'https://cdn.jsdelivr.net/gh/google/material-design-icons@50f0603/symbols/web/' \
-           'NAME/materialsymbolsoutlined/NAME_24px.svg',
-}.freeze
+# One cell: what a system draws and what it calls it, or the name alone where nothing drew.
+def artwork_cell(system, name)
+  path = system == :ios ? (artwork_path system, name) : (artwork system, name)
+  return "`#{name}` #{FALLBACK_MARK}" unless File.exist? path
 
-# Where the copy of each system's artwork is kept.
-ARTWORK_DIRECTORIES = {
-  bootstrap: 'vendor/bootstrap-icons', android: 'vendor/material-symbols',
-}.freeze
-
-# Grey rather than black, so every row reads on a light and a dark theme alike.
-ARTWORK_FILL = '#888888'
-
-# The two attributes a vendored copy differs from upstream in.
-ARTWORK_SIZE = 20
-
-# Recolours and resizes one upstream file, which is all a vendored copy changes.
-def restyled(svg)
-  coloured = svg.gsub 'currentColor', ARTWORK_FILL
-  root = coloured[/<svg[^>]*>/]
-  coloured = coloured.sub '<svg', "<svg fill='#{ARTWORK_FILL}'" unless root.include? 'fill='
-  coloured.gsub(/(width|height)="\d+"/, "\\1='#{ARTWORK_SIZE}'")
+  "![#{name}](#{path}) `#{name}`"
 end
 
-# The path to an icon's vendored artwork, downloading it the first time it is asked for.
-def artwork(system, name)
-  directory = ARTWORK_DIRECTORIES.fetch system
-  path = "#{directory}/#{name}.svg"
-  return path if File.exist? path
-
-  template = ARTWORK.fetch system
-  FileUtils.mkdir_p directory
-  File.write path, (restyled URI.parse(template.gsub('NAME', name.to_s)).read)
-  path
-end
-
-# One row of the concept table: the concept, then what each system draws and calls it.
+# One row of the concept table: the concept, then each system's icon beside its name.
 def concept_row(concept, names)
-  bootstrap = names.fetch :bootstrap
-  android = names.fetch :android
   cells = [
     "`:#{concept}`",
-    "![#{bootstrap}](#{artwork :bootstrap, bootstrap}) `#{bootstrap}`",
-    "`#{names.fetch :ios}`",
-    "![#{android}](#{artwork :android, android}) `#{android}`",
+    artwork_cell(:bootstrap, names.fetch(:bootstrap)),
+    artwork_cell(:ios, names.fetch(:ios)),
+    artwork_cell(:android, names.fetch(:android)),
   ]
   "| #{cells.join ' | '} |"
 end
@@ -66,11 +34,15 @@ task :readme do
   $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
   require 'unicon'
 
+  symbols = Unicon::MEANINGS.each_value.map { |names| names.fetch :ios }
+  undrawn = render_symbols symbols
+
   concepts = [
     '| Concept | Bootstrap Icons | SF Symbols | Material Symbols |',
     '| --- | --- | --- | --- |',
   ]
   Unicon::MEANINGS.each { |concept, names| concepts << (concept_row concept, names) }
+  concepts += ['', FALLBACK_NOTE] if undrawn.any?
 
   models = ['| Model name | Concept it draws |', '| --- | --- |']
   Unicon::ALIASES.each { |model, concept| models << "| `:#{model}` | `:#{concept}` |" }
@@ -78,5 +50,6 @@ task :readme do
   readme = File.read 'README.md'
   readme = between_markers readme, 'concepts', concepts
   File.write 'README.md', (between_markers readme, 'models', models)
+  warn "no artwork for #{undrawn.join ', '}" if undrawn.any?
   puts "#{Unicon::MEANINGS.size} concepts and #{Unicon::ALIASES.size} model names written"
 end
