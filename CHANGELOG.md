@@ -5,10 +5,10 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
-- **Fix.** 119 of the 126 SF Symbols the table draws are vendored as SVG rather than as a
-  20-pixel PNG, so they stay sharp at any size and take the colour around them. Seven are
-  still PNGs: six the tracer would not commit to a match on, and `receipt`, which this
-  macOS cannot draw at all.
+- **Fix.** All 126 SF Symbols the table draws are vendored as SVG rather than as a
+  20-pixel PNG, so they stay sharp at any size and take the color around them. The
+  127th, `receipt`, has no artwork: this macOS cannot draw it, so the table shows the
+  dashed circle it shows for any symbol newer than the system.
 
 ## [0.1.0] - 2026-08-05
 

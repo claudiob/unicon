@@ -41,7 +41,7 @@ func fingerprint(_ draw: (CGContext) -> Void) -> [Double]? {
     let pixels = rep.bitmapData!
     // Softened first. The system hands back a raster it then scales, so its strokes arrive
     // fatter and fuzzier than the same outline filled directly; blurring both to the same
-    // degree is what lets one be recognised as the other.
+    // degree is what lets one be recognized as the other.
     var coverage = (0..<(canvas * canvas)).map { Double(pixels[$0 * 4 + 3]) / 255 }
     let radius = 2
     var softened = coverage
@@ -157,7 +157,7 @@ let ascent = CTFontGetAscent(font), descent = CTFontGetDescent(font)
 
 // Every outline the font holds, fingerprinted once: each name is then a lookup rather than
 // ten thousand renders of its own.
-var glyphs: [(CGGlyph, CGPath, [Double])] = []
+var glyphs: [(UInt32, CGGlyph, CGPath, [Double])] = []
 for code in UInt32(0x100000)...UInt32(0x10FFFD) {
     guard let scalar = UnicodeScalar(code) else { continue }
     var characters = Array(String(scalar).utf16)
@@ -165,7 +165,7 @@ for code in UInt32(0x100000)...UInt32(0x10FFFD) {
     guard CTFontGetGlyphsForCharacters(font, &characters, &found, characters.count), found[0] != 0,
           let path = CTFontCreatePathForGlyph(font, found[0], nil), let mark = print(of: path)
     else { continue }
-    glyphs.append((found[0], path, mark))
+    glyphs.append((code, found[0], path, mark))
 }
 
 // How unlike two coverage maps are: correlation, so a fatter stroke of the same shape
@@ -180,33 +180,57 @@ func distance(_ one: [Double], _ other: [Double]) -> Double {
     return 1 - dot / max((left * right).squareRoot(), 1e-9)
 }
 
+// The six the matcher would not commit to, each found by walking the font and confirmed by
+// the family sitting beside it — `hammer.fill` right after `hammer`, `message.circle` two
+// after `message`, `uiwindow.split.2x1` and `dock.rectangle` either side of `macwindow`.
+// Apple redesigned all six between the set this macOS draws and the set the app ships, so
+// no comparison of the two pictures can recognize them; only their neighbors can.
+let byEye: [String: UInt32] = [
+    "display": 0x1008B9, "hammer": 0x100644, "laptopcomputer": 0x1007DB,
+    "macwindow": 0x1003DC, "message": 0x100324, "person.crop.circle": 0x10026D,
+]
+// Codepoints are this app version's numbering. A different one renumbers them, so the table
+// is ignored rather than trusted, and those six go back to being reported unmatched.
+let byEyeVersion = "7.2"
+let appPlist = NSDictionary(contentsOfFile:
+    "/Applications/SF Symbols.app/Contents/Info.plist") as? [String: Any]
+let appVersion = appPlist?["CFBundleShortVersionString"] as? String
+
 let configuration = NSImage.SymbolConfiguration(pointSize: 96, weight: .regular)
 var written = 0
 var unavailable: [String] = []
 
 while let name = readLine(strippingNewline: true), !name.isEmpty {
-    guard let image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?
-        .withSymbolConfiguration(configuration), let wanted = print(of: image) else {
-        unavailable.append(name)
+    var chosen: (CGGlyph, CGPath)?
+
+    if appVersion == byEyeVersion, let code = byEye[name],
+       let hit = glyphs.first(where: { $0.0 == code }) {
+        chosen = (hit.1, hit.2)
+    } else if let image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?
+        .withSymbolConfiguration(configuration), let wanted = print(of: image) {
+        let scored = glyphs.map { _, glyph, path, mark in
+            (glyph, path, mark, distance(mark, wanted))
+        }.sorted { $0.3 < $1.3 }
+
+        if let best = scored.first, best.3 < near,
+           scored[1].3 > best.3 * decisive || distance(best.2, scored[1].2) < same {
+            chosen = (best.0, best.1)
+        } else {
+            Swift.print("unmatched \(name)")
+        }
+    } else {
         Swift.print("unavailable \(name)")
-        continue
     }
 
-    let scored = glyphs.map { glyph, path, mark in
-        (glyph, path, mark, distance(mark, wanted))
-    }.sorted { $0.3 < $1.3 }
-
-    guard let best = scored.first, best.3 < near,
-          scored[1].3 > best.3 * decisive || distance(best.2, scored[1].2) < same else {
+    guard let (found, outline) = chosen else {
         unavailable.append(name)
-        Swift.print("unmatched \(name)")
         continue
     }
 
     var advance = CGSize.zero
-    var glyph = best.0
+    var glyph = found
     CTFontGetAdvancesForGlyphs(font, .horizontal, &glyph, &advance, 1)
-    let drawing = svg(of: best.1, advance: advance.width, ascent: ascent, descent: descent)
+    let drawing = svg(of: outline, advance: advance.width, ascent: ascent, descent: descent)
 
     do {
         try drawing.write(toFile: "\(directory)/\(name).svg", atomically: true, encoding: .utf8)

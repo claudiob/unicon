@@ -16,18 +16,18 @@ ARTWORK_DIRECTORIES = {
   bootstrap: 'vendor/bootstrap-icons', ios: 'vendor/sf-symbols', android: 'vendor/material-symbols',
 }.freeze
 
-# Grey rather than black, so every row reads on a light and a dark theme alike.
+# Gray rather than black, so every row reads on a light and a dark theme alike.
 ARTWORK_FILL = '#888888'
 
 # The two attributes a vendored copy differs from upstream in.
 ARTWORK_SIZE = 20
 
-# Recolours and resizes one upstream file, which is all a vendored copy changes.
+# Recolors and resizes one upstream file, which is all a vendored copy changes.
 def restyled(svg)
-  coloured = svg.gsub 'currentColor', ARTWORK_FILL
-  root = coloured[/<svg[^>]*>/]
-  coloured = coloured.sub '<svg', "<svg fill='#{ARTWORK_FILL}'" unless root.include? 'fill='
-  coloured.gsub(/(width|height)="\d+"/, "\\1='#{ARTWORK_SIZE}'")
+  colored = svg.gsub 'currentColor', ARTWORK_FILL
+  root = colored[/<svg[^>]*>/]
+  colored = colored.sub '<svg', "<svg fill='#{ARTWORK_FILL}'" unless root.include? 'fill='
+  colored.gsub(/(width|height)="\d+"/, "\\1='#{ARTWORK_SIZE}'")
 end
 
 # The path an icon's artwork is vendored at, whether or not anything is there yet. A symbol
