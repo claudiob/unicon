@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
     ls.readlines("\x0", chomp: true).reject do |f|
       (f == gemspec) ||
-        f.start_with?(*%w[Gemfile Rakefile bin/ data/ rakelib/ tools/ vendor/ test/ .gitignore
-                          .rubocop.yml])
+        f.start_with?(*%w[Gemfile Rakefile assets/ bin/ data/ rakelib/ tools/ vendor/
+                          test/ .gitignore .rubocop.yml])
     end
   end
   spec.require_paths = ['lib']
