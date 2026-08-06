@@ -344,7 +344,7 @@ Unicon[:contact]
       <pre><code>Unicon.icons
 <span class='out'>=&gt; [:account, :airplane, :alarm, :archive, :award, :badge, ...]</span>
 
-Unicon.models
+Unicon.names
 <span class='out'>=&gt; [:account, :address, :agent, :airplane, :alarm, :alert, ...]</span>
 
 Unicon.actions
@@ -354,9 +354,10 @@ Unicon.actions
           <dt><code>Unicon.icons</code></dt>
           <dd>One name per distinct picture — 127 of them. No two entries draw the same
             thing, which is what makes this the list to show somebody choosing an icon.</dd>
-          <dt><code>Unicon.models</code></dt>
-          <dd>Every name that resolves, most of them names a record might go by. This is the list
-            to check a name against before reaching for the fallback.</dd>
+          <dt><code>Unicon.names</code></dt>
+          <dd>The union of all three groups — the icons, the actions and the model synonyms — and
+            so every name that resolves. Ask for it to find out whether a name draws something;
+            ask for <code>icons</code> when somebody is choosing one.</dd>
           <dt><code>Unicon.actions</code></dt>
           <dd>The doing words: <code>close</code>, <code>pencil</code>, every chevron. A toolbar
             needs them and <code>Unicon[:close]</code> answers, but nobody has a Close model, so
