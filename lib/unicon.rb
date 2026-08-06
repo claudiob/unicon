@@ -1,7 +1,10 @@
 require 'unicon/version'
-require 'unicon/icons/actions'
+require 'unicon/icons/actions/editing'
+require 'unicon/icons/actions/playing'
+require 'unicon/icons/actions/pointing'
+require 'unicon/icons/actions/sending'
+require 'unicon/icons/actions/switching'
 require 'unicon/icons/aliases'
-require 'unicon/icons/arrows'
 require 'unicon/icons/charts'
 require 'unicon/icons/commerce'
 require 'unicon/icons/communication'
@@ -22,22 +25,29 @@ require 'unicon/icons/transport'
 # each client draws it from the set it already ships: `:bootstrap` for Bootstrap Icons,
 # `:ios` for SF Symbols, `:android` for Material Symbols.
 module Unicon
-  # Every concept, keyed by what it means rather than by what any one system calls it
+  # Concepts naming something an app has, which is what a picker offers as a model's icon
   MEANINGS = {
-    **ACTIONS, **ARROWS, **CHARTS, **COMMERCE, **COMMUNICATION, **DEVICES, **FILES, **LAYOUT,
-    **MEDIA, **NATURE, **PEOPLE, **PLACES, **SECURITY, **STATUS, **TIME, **TOOLS, **TRANSPORT,
+    **CHARTS, **COMMERCE, **COMMUNICATION, **DEVICES, **FILES, **LAYOUT, **MEDIA, **NATURE,
+    **PEOPLE, **PLACES, **SECURITY, **STATUS, **TIME, **TOOLS, **TRANSPORT,
   }.freeze
 
-  # Every name the gem answers to: the concepts, and the model names borrowing from them
-  ICONS = {
-    **MEANINGS, **ALIASES.transform_values { |concept| MEANINGS.fetch concept },
-  }.each_value(&:freeze).freeze
+  # Concepts naming something an app does, which a toolbar draws and no model is named after
+  ACTIONS = { **EDITING, **PLAYING, **POINTING, **SENDING, **SWITCHING }.freeze
 
-  # Every name a lookup answers to, alphabetically, so no order depends on the merge above
+  # Every name a lookup answers to: both of those, and the model names borrowing from them
+  ICONS = {
+    **MEANINGS, **ACTIONS,
+    **ALIASES.transform_values { |concept| MEANINGS[concept] || ACTIONS.fetch(concept) },
+  }.each_value { |names| names.each_value(&:freeze).freeze }.freeze
+
+  # Every name in `ICONS`, alphabetically, so no order depends on the merge above
   CONCEPT_NAMES = ICONS.keys.sort.freeze
 
-  # The distinct ideas alone, alphabetically, with every model name borrowing one left out
+  # The names in `MEANINGS` alone, alphabetically
   MEANING_NAMES = MEANINGS.keys.sort.freeze
+
+  # The names in `ACTIONS` alone, alphabetically
+  ACTION_NAMES = ACTIONS.keys.sort.freeze
 
   # The three names for a concept, or the circle's when nothing is known by that name
   def self.fetch(concept)
@@ -47,9 +57,12 @@ module Unicon
   # Shorthand for `fetch`
   def self.[](concept) = fetch concept
 
-  # Every name `fetch` answers to, model names included: what you check a name against
+  # Every name `fetch` answers to, actions and model names included: what to check against
   def self.concepts = CONCEPT_NAMES
 
-  # One name per distinct icon, model names left out: what you offer somebody to choose from
+  # The concepts an app has a model of: what to offer somebody choosing a model's icon
   def self.meanings = MEANING_NAMES
+
+  # The concepts an app does rather than has: fetchable, never offered as a model's icon
+  def self.actions = ACTION_NAMES
 end
