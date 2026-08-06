@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+bundle install
+
+# Nothing else to do: `rake` needs no database, and the name lists it validates
+# against are in the repository.

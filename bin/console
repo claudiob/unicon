@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'unicon'
+
+# Everything the gem answers is a constant lookup, so there is nothing to set up:
+# `Unicon[:house]` works on the first line typed.
+
+require 'irb'
+IRB.start __FILE__
