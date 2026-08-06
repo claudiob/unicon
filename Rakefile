@@ -7,6 +7,35 @@ require 'rubocop/rake_task'
 
 RuboCop::RakeTask.new
 
+# The three keys every concept carries, and the list of published names behind each.
+# The lists are vendored, so validation costs no network call.
+NAME_LISTS = {
+  bootstrap: 'data/bootstrap-icons.txt',
+  ios: 'data/sf-symbols.txt',
+  android: 'data/material-symbols.txt',
+}.freeze
+
+desc 'Fail unless every icon name appears in the list published by its own design system'
+task :validate do
+  $LOAD_PATH.unshift File.expand_path('lib', __dir__)
+  require 'unicon'
+
+  published = {}
+  NAME_LISTS.each { |system, path| published[system] = File.readlines path, chomp: true }
+
+  wrong = Unicon::ICONS.reject { |_, names| names.keys == NAME_LISTS.keys }.keys
+  abort "Not keyed #{NAME_LISTS.keys.join ', '}: #{wrong.join ', '}" if wrong.any?
+
+  unpublished = Unicon::ICONS.flat_map do |concept, names|
+    names.filter_map do |system, name|
+      "#{concept}.#{system}=#{name}" unless published[system].include? name.to_s
+    end
+  end
+  abort "No such icon: #{unpublished.join ', '}" if unpublished.any?
+
+  puts "#{Unicon::ICONS.size} concepts, #{Unicon::ICONS.size * 3} names, all published"
+end
+
 # Ceiling for every code file, blank and comment lines included.
 MAX_FILE_LINES = 100
 
@@ -28,4 +57,4 @@ task :file_length do
   abort "Longer than #{MAX_FILE_LINES} lines: #{too_long.join ', '}" if too_long.any?
 end
 
-task default: %i[test rubocop file_length]
+task default: %i[test validate rubocop file_length]
