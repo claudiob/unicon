@@ -33,8 +33,11 @@ module Unicon
     **MEANINGS, **ALIASES.transform_values { |concept| MEANINGS.fetch concept },
   }.each_value(&:freeze).freeze
 
-  # Those names in alphabetical order, so a picker built from them does not shuffle
-  CONCEPTS = ICONS.keys.sort.freeze
+  # Every name a lookup answers to, alphabetically, so no order depends on the merge above
+  CONCEPT_NAMES = ICONS.keys.sort.freeze
+
+  # The distinct ideas alone, alphabetically, with every model name borrowing one left out
+  MEANING_NAMES = MEANINGS.keys.sort.freeze
 
   # The three names for a concept, or the circle's when nothing is known by that name
   def self.fetch(concept)
@@ -44,6 +47,9 @@ module Unicon
   # Shorthand for `fetch`
   def self.[](concept) = fetch concept
 
-  # Every name `fetch` answers to, for a caller offering the whole list
-  def self.concepts = CONCEPTS
+  # Every name `fetch` answers to, model names included: what you check a name against
+  def self.concepts = CONCEPT_NAMES
+
+  # One name per distinct icon, model names left out: what you offer somebody to choose from
+  def self.meanings = MEANING_NAMES
 end
