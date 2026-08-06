@@ -49,6 +49,17 @@ Unicon.fetch :nothing_by_this_name
 A caller rendering whatever it is handed never has to check first, and never draws a
 blank. A string is read as a symbol, so `Unicon['contact']` works too.
 
+## The whole list
+
+```ruby
+Unicon.concepts
+# => [:account, :address, :agent, :airplane, :alarm, ...]
+```
+
+Every name `fetch` answers to, model names included, in alphabetical order — the list
+a picker offers. `Unicon::ICONS` is the table behind it, should a caller want the icons
+as well as the names.
+
 ## Model names
 
 A host app looks an icon up by the name of the model it is rendering. These names are
