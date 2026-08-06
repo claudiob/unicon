@@ -34,8 +34,9 @@ module Unicon
   # The pictures for what an app does rather than has, which no record is ever named after
   ACTIONS = { **EDITING, **PLAYING, **POINTING, **SENDING, **SWITCHING }.freeze
 
-  # Every name a lookup resolves: the pictures, the actions, and the names borrowing one
-  MODELS = {
+  # Everything a lookup resolves, keyed to its picture: the icons, the actions, and the
+  # model synonyms borrowing one
+  TABLE = {
     **ICONS, **ACTIONS,
     **ALIASES.transform_values { |concept| ICONS[concept] || ACTIONS.fetch(concept) },
   }.each_value { |names| names.each_value(&:freeze).freeze }.freeze
@@ -43,15 +44,15 @@ module Unicon
   # What to show in a picker: one name per picture, so no two entries draw the same thing
   ICON_NAMES = ICONS.keys.sort.freeze
 
-  # What to check a name against: every name that resolves, in alphabetical order
-  MODEL_NAMES = MODELS.keys.sort.freeze
+  # Every key of `TABLE`, alphabetically: icons, actions and model synonyms together
+  NAMES = TABLE.keys.sort.freeze
 
   # The doing words among them, which `ICON_NAMES` leaves out on purpose
   ACTION_NAMES = ACTIONS.keys.sort.freeze
 
   # The three names for a concept, or the circle's when nothing is known by that name
   def self.fetch(concept)
-    MODELS.fetch concept.to_s.to_sym, MODELS.fetch(:circle)
+    TABLE.fetch concept.to_s.to_sym, TABLE.fetch(:circle)
   end
 
   # Shorthand for `fetch`
@@ -60,9 +61,10 @@ module Unicon
   # One name per distinct picture: the list to offer somebody choosing an icon
   def self.icons = ICON_NAMES
 
-  # Every name that resolves, most of them names a record might go by: the list to
-  # check a name against before falling back
-  def self.models = MODEL_NAMES
+  # The union of all three groups — icons, actions and model synonyms — and so every name
+  # `fetch` resolves. Ask for this to find out whether a name draws something; ask for
+  # `icons` when somebody is choosing one.
+  def self.names = NAMES
 
   # The pictures for what an app does: fetchable by name, never offered as a choice
   def self.actions = ACTION_NAMES

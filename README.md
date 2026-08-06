@@ -57,21 +57,21 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 
 ```ruby
 Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    127
-Unicon.models   # => [:account, :address, :agent, :airplane, :alarm, :alert, ...]    303
+Unicon.names    # => [:account, :address, :agent, :airplane, :alarm, :alert, ...]    303
 Unicon.actions  # => [:arrow_down, :arrow_left, :arrow_right, :arrow_up, ...]         42
 ```
 
 - `Unicon.icons` is **one name per distinct picture**. No two entries draw the same
   thing, which is what makes it the list to show somebody choosing an icon.
-- `Unicon.models` is **every name that resolves**, most of them names a record might go
-  by. It is the list to check a name against — if it is in here, `fetch` has a picture
-  for it, and there is no need to reach for the fallback.
+- `Unicon.names` is **the union of all three groups** — the icons, the actions and the
+  model synonyms — and so every name that resolves. Ask for it to find out whether a
+  name draws something; ask for `icons` when somebody is choosing one.
 - `Unicon.actions` is **the doing words**: `close`, `pencil`, every chevron. A toolbar
   needs them and `Unicon[:close]` answers, but nobody has a Close model, so `icons`
   leaves them out on purpose.
 
 All three are frozen, sorted arrays of symbols; only what `fetch` returns is strings.
-`Unicon::ICONS`, `Unicon::MODELS` and `Unicon::ACTIONS` are the tables behind them, for a
+`Unicon::ICONS`, `Unicon::TABLE` and `Unicon::ACTIONS` are the tables behind them, for a
 caller who wants the pictures as well as the names.
 
 ## Model names

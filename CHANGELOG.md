@@ -17,7 +17,7 @@ what decides both whether a reader can take it and what the next version number 
   Symbols all have a sensible icon, and 134 model names — `:user`, `:invoice`, `:zip` —
   resolving to the concept they borrow from.
 - **Feature.** Three lists to ask for. `Unicon.icons` is the 127 distinct pictures, one
-  name each, for offering somebody a choice. `Unicon.models` is all 303 names that
+  name each, for offering somebody a choice. `Unicon.names` is all 303 names that
   resolve, for checking a name against. `Unicon.actions` is the 42 doing words —
   `close`, `pencil`, every chevron — which a toolbar draws and no picker should offer.
 - **Feature.** `rake validate` checks all 909 names against the list each design system

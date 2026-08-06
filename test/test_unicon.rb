@@ -17,8 +17,8 @@ class TestUnicon < Minitest::Test
     assert_includes Unicon.icons, :house
     assert_includes Unicon.actions, :close
     refute_includes Unicon.icons, :close
-    assert_includes Unicon.models, :home
+    assert_includes Unicon.names, :home
     refute_includes Unicon.icons, :home
-    assert_equal Unicon.models.sort, Unicon.models
+    assert_equal Unicon.names.sort, Unicon.names
   end
 end
