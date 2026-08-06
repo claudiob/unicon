@@ -23,15 +23,18 @@ require 'unicon/icons/transport'
 # `:ios` for SF Symbols, `:android` for Material Symbols.
 module Unicon
   # Every concept, keyed by what it means rather than by what any one system calls it
-  CONCEPTS = {
+  MEANINGS = {
     **ACTIONS, **ARROWS, **CHARTS, **COMMERCE, **COMMUNICATION, **DEVICES, **FILES, **LAYOUT,
     **MEDIA, **NATURE, **PEOPLE, **PLACES, **SECURITY, **STATUS, **TIME, **TOOLS, **TRANSPORT,
   }.freeze
 
   # Every name the gem answers to: the concepts, and the model names borrowing from them
   ICONS = {
-    **CONCEPTS, **ALIASES.transform_values { |concept| CONCEPTS.fetch concept },
+    **MEANINGS, **ALIASES.transform_values { |concept| MEANINGS.fetch concept },
   }.freeze
+
+  # Those names in alphabetical order, so a picker built from them does not shuffle
+  CONCEPTS = ICONS.keys.sort.freeze
 
   # The three names for a concept, or the circle's when nothing is known by that name
   def self.fetch(concept)
@@ -40,4 +43,7 @@ module Unicon
 
   # Shorthand for `fetch`
   def self.[](concept) = fetch concept
+
+  # Every name `fetch` answers to, for a caller offering the whole list
+  def self.concepts = CONCEPTS
 end

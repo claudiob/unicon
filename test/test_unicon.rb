@@ -8,4 +8,9 @@ class TestUnicon < Minitest::Test
   def test_it_reads_a_model_name_as_the_concept_it_borrows_from
     assert_equal Unicon[:house], Unicon['home']
   end
+
+  def test_it_lists_every_name_it_answers_to_in_alphabetical_order
+    assert_equal Unicon.concepts.sort, Unicon.concepts
+    assert_includes Unicon.concepts, :circle
+  end
 end
