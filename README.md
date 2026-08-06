@@ -56,21 +56,23 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 ## Three lists, and which one you want
 
 ```ruby
-Unicon.concepts   # => [:account, :address, :agent, :airplane, :alarm, :alert, ...]  303
-Unicon.meanings   # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]  127
-Unicon.actions    # => [:arrow_down, :arrow_left, :arrow_right, :arrow_up, ...]       42
+Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    127
+Unicon.models   # => [:account, :address, :agent, :airplane, :alarm, :alert, ...]    303
+Unicon.actions  # => [:arrow_down, :arrow_left, :arrow_right, :arrow_up, ...]         42
 ```
 
-- `Unicon.concepts` is **every name `fetch` answers to** — the other two lists and the
-  model names as well. It is what you check a name against.
-- `Unicon.meanings` is **the concepts an app has a model of**. It is what you offer
-  somebody choosing an icon for a model.
-- `Unicon.actions` is **the concepts an app does rather than has**: `close`, `pencil`,
-  every chevron. A toolbar needs them and `Unicon[:close]` answers, but nobody has a
-  Close model, so they are never offered as a model's icon.
+- `Unicon.icons` is **one name per distinct picture**. No two entries draw the same
+  thing, which is what makes it the list to show somebody choosing an icon.
+- `Unicon.models` is **every name that resolves**, most of them names a record might go
+  by. It is the list to check a name against — if it is in here, `fetch` has a picture
+  for it, and there is no need to reach for the fallback.
+- `Unicon.actions` is **the doing words**: `close`, `pencil`, every chevron. A toolbar
+  needs them and `Unicon[:close]` answers, but nobody has a Close model, so `icons`
+  leaves them out on purpose.
 
-All three are sorted arrays of symbols and are frozen. `Unicon::ICONS`, `Unicon::MEANINGS`
-and `Unicon::ACTIONS` are the tables behind them, for a caller wanting the icons too.
+All three are frozen, sorted arrays of symbols; only what `fetch` returns is strings.
+`Unicon::ICONS`, `Unicon::MODELS` and `Unicon::ACTIONS` are the tables behind them, for a
+caller who wants the pictures as well as the names.
 
 ## Model names
 
@@ -100,8 +102,8 @@ name each system uses is on the icon**: hover it, or reach it with a screen read
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
 The 42 action icons are not in the table. They are fetchable — `Unicon[:pencil]` answers
-— but they name what an app does rather than what it has, and this table is the list of
-things a model can be. `Unicon.actions` names them all.
+— but they name what an app does rather than what it has, and this table is `Unicon.icons`
+drawn out. `Unicon.actions` names them all.
 
 <!-- concepts:start -->
 | Concept | Bootstrap | iOS | Android | Models |

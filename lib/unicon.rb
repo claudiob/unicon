@@ -25,44 +25,45 @@ require 'unicon/icons/transport'
 # each client draws it from the set it already ships: `:bootstrap` for Bootstrap Icons,
 # `:ios` for SF Symbols, `:android` for Material Symbols.
 module Unicon
-  # Concepts naming something an app has, which is what a picker offers as a model's icon
-  MEANINGS = {
+  # One entry per distinct picture, keyed by the thing it draws
+  ICONS = {
     **CHARTS, **COMMERCE, **COMMUNICATION, **DEVICES, **FILES, **LAYOUT, **MEDIA, **NATURE,
     **PEOPLE, **PLACES, **SECURITY, **STATUS, **TIME, **TOOLS, **TRANSPORT,
   }.freeze
 
-  # Concepts naming something an app does, which a toolbar draws and no model is named after
+  # The pictures for what an app does rather than has, which no record is ever named after
   ACTIONS = { **EDITING, **PLAYING, **POINTING, **SENDING, **SWITCHING }.freeze
 
-  # Every name a lookup answers to: both of those, and the model names borrowing from them
-  ICONS = {
-    **MEANINGS, **ACTIONS,
-    **ALIASES.transform_values { |concept| MEANINGS[concept] || ACTIONS.fetch(concept) },
+  # Every name a lookup resolves: the pictures, the actions, and the names borrowing one
+  MODELS = {
+    **ICONS, **ACTIONS,
+    **ALIASES.transform_values { |concept| ICONS[concept] || ACTIONS.fetch(concept) },
   }.each_value { |names| names.each_value(&:freeze).freeze }.freeze
 
-  # Every name in `ICONS`, alphabetically, so no order depends on the merge above
-  CONCEPT_NAMES = ICONS.keys.sort.freeze
+  # What to show in a picker: one name per picture, so no two entries draw the same thing
+  ICON_NAMES = ICONS.keys.sort.freeze
 
-  # The names in `MEANINGS` alone, alphabetically
-  MEANING_NAMES = MEANINGS.keys.sort.freeze
+  # What to check a name against: every name that resolves, in alphabetical order
+  MODEL_NAMES = MODELS.keys.sort.freeze
 
-  # The names in `ACTIONS` alone, alphabetically
+  # The doing words among them, which `ICON_NAMES` leaves out on purpose
   ACTION_NAMES = ACTIONS.keys.sort.freeze
 
   # The three names for a concept, or the circle's when nothing is known by that name
   def self.fetch(concept)
-    ICONS.fetch concept.to_s.to_sym, ICONS.fetch(:circle)
+    MODELS.fetch concept.to_s.to_sym, MODELS.fetch(:circle)
   end
 
   # Shorthand for `fetch`
   def self.[](concept) = fetch concept
 
-  # Every name `fetch` answers to, actions and model names included: what to check against
-  def self.concepts = CONCEPT_NAMES
+  # One name per distinct picture: the list to offer somebody choosing an icon
+  def self.icons = ICON_NAMES
 
-  # The concepts an app has a model of: what to offer somebody choosing a model's icon
-  def self.meanings = MEANING_NAMES
+  # Every name that resolves, most of them names a record might go by: the list to
+  # check a name against before falling back
+  def self.models = MODEL_NAMES
 
-  # The concepts an app does rather than has: fetchable, never offered as a model's icon
+  # The pictures for what an app does: fetchable by name, never offered as a choice
   def self.actions = ACTION_NAMES
 end

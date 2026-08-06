@@ -13,12 +13,12 @@ class TestUnicon < Minitest::Test
     assert_predicate house.fetch(:android), :frozen?
   end
 
-  def test_it_offers_the_things_an_app_has_and_withholds_what_it_does
-    assert_includes Unicon.meanings, :house
+  def test_it_offers_one_name_per_picture_and_resolves_many_more
+    assert_includes Unicon.icons, :house
     assert_includes Unicon.actions, :close
-    refute_includes Unicon.meanings, :close
-    assert_includes Unicon.concepts, :home
-    refute_includes Unicon.meanings, :home
-    assert_equal Unicon.concepts.sort, Unicon.concepts
+    refute_includes Unicon.icons, :close
+    assert_includes Unicon.models, :home
+    refute_includes Unicon.icons, :home
+    assert_equal Unicon.models.sort, Unicon.models
   end
 end

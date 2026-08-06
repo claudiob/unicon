@@ -37,7 +37,7 @@ task :readme do
   $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
   require 'unicon'
 
-  symbols = Unicon::MEANINGS.each_value.map { |names| names.fetch :ios }
+  symbols = Unicon::ICONS.each_value.map { |names| names.fetch :ios }
   undrawn = render_symbols symbols
   borrowers = Unicon::ALIASES.group_by { |_, concept| concept }
 
@@ -45,7 +45,7 @@ task :readme do
     '| Concept | Bootstrap | iOS | Android | Models |',
     '| --- | --- | --- | --- | --- |',
   ]
-  Unicon::MEANINGS.sort.each do |concept, names|
+  Unicon::ICONS.sort.each do |concept, names|
     models = borrowers.fetch(concept, []).map(&:first).sort
     rows << (concept_row concept, names, models)
   end
@@ -53,5 +53,5 @@ task :readme do
 
   File.write 'README.md', (between_markers File.read('README.md'), 'concepts', rows)
   warn "no artwork for #{undrawn.join ', '}" if undrawn.any?
-  puts "#{Unicon::MEANINGS.size} concepts written, #{Unicon::ALIASES.size} model names beside them"
+  puts "#{Unicon::ICONS.size} concepts written, #{Unicon::ALIASES.size} model names beside them"
 end

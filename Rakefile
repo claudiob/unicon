@@ -23,17 +23,17 @@ task :validate do
   published = {}
   NAME_LISTS.each { |system, path| published[system] = File.readlines path, chomp: true }
 
-  wrong = Unicon::ICONS.reject { |_, names| names.keys == NAME_LISTS.keys }.keys
+  wrong = Unicon::MODELS.reject { |_, names| names.keys == NAME_LISTS.keys }.keys
   abort "Not keyed #{NAME_LISTS.keys.join ', '}: #{wrong.join ', '}" if wrong.any?
 
-  unpublished = Unicon::ICONS.flat_map do |concept, names|
+  unpublished = Unicon::MODELS.flat_map do |concept, names|
     names.filter_map do |system, name|
       "#{concept}.#{system}=#{name}" unless published[system].include? name.to_s
     end
   end
   abort "No such icon: #{unpublished.join ', '}" if unpublished.any?
 
-  puts "#{Unicon::ICONS.size} concepts, #{Unicon::ICONS.size * 3} names, all published"
+  puts "#{Unicon::MODELS.size} names, #{Unicon::MODELS.size * 3} icon names, all published"
 end
 
 # Ceiling for every code file, blank and comment lines included.
