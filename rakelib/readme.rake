@@ -13,11 +13,11 @@ def artwork_cell(system, name)
   "![#{name}](#{path} \"#{name}\")"
 end
 
-# One row: the concept, the model names that borrow it, and what each system draws for it.
-def concept_row(concept, names, models)
+# One row: the concept, the names that alias it, and what each system draws for it.
+def concept_row(concept, names, aliases)
   cells = [
     "`:#{concept}`",
-    models.map { |model| "`:#{model}`" }.join(' '),
+    aliases.map { |name| "`:#{name}`" }.join(' '),
     artwork_cell(:bootstrap, names.fetch(:bootstrap)),
     artwork_cell(:ios, names.fetch(:ios)),
     artwork_cell(:android, names.fetch(:android)),
@@ -42,16 +42,16 @@ task :readme do
   borrowers = Unicon::ALIASES.group_by { |_, concept| concept }
 
   rows = [
-    '| Concept | Models | Bootstrap | iOS | Android |',
+    '| Icon | Aliases | Bootstrap | iOS | Android |',
     '| --- | --- | --- | --- | --- |',
   ]
   Unicon::ICONS.sort.each do |concept, names|
-    models = borrowers.fetch(concept, []).map(&:first).sort
-    rows << (concept_row concept, names, models)
+    aliases = borrowers.fetch(concept, []).map(&:first).sort
+    rows << (concept_row concept, names, aliases)
   end
   rows += ['', UNDRAWN_NOTE] if undrawn.any?
 
   File.write 'README.md', (between_markers File.read('README.md'), 'concepts', rows)
   warn "no artwork for #{undrawn.join ', '}" if undrawn.any?
-  puts "#{Unicon::ICONS.size} concepts written, #{Unicon::ALIASES.size} model names beside them"
+  puts "#{Unicon::ICONS.size} icons written, #{Unicon::ALIASES.size} aliases beside them"
 end

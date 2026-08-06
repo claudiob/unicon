@@ -78,7 +78,7 @@ caller who wants the pictures as well as the names.
 
 A host app looks an icon up by the name of the model it is rendering, and the more names
 answer, the less any app has to declare. 134 of them borrow the icons of a concept —
-`:user` takes the person, `:zip` takes the pin — and the Models column of the table below
+`:user` takes the person, `:zip` takes the pin — and the Aliases column of the table below
 says which took which. They resolve without swelling the list a picker offers.
 
 Four borrow an action rather than a thing, so they are the four the table cannot show:
@@ -106,7 +106,7 @@ The 42 action icons are not in the table. They are fetchable — `Unicon[:pencil
 drawn out. `Unicon.actions` names them all.
 
 <!-- concepts:start -->
-| Concept | Models | Bootstrap | iOS | Android |
+| Icon | Aliases | Bootstrap | iOS | Android |
 | --- | --- | --- | --- | --- |
 | `:account` | `:avatar` `:profile` | ![person-circle](vendor/bootstrap-icons/person-circle.svg "person-circle") | ![person.crop.circle](vendor/sf-symbols/person.crop.circle.png "person.crop.circle") | ![account_circle](vendor/material-symbols/account_circle.svg "account_circle") |
 | `:airplane` |  | ![airplane](vendor/bootstrap-icons/airplane.svg "airplane") | ![airplane](vendor/sf-symbols/airplane.png "airplane") | ![flight](vendor/material-symbols/flight.svg "flight") |
