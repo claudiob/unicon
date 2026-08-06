@@ -16,7 +16,7 @@ def with_main
 end
 
 # One vendored SVG made ready to sit in the page: it follows the surrounding text rather
-# than carrying the grey the README wants, and the stylesheet sizes it.
+# than carrying the gray the README wants, and the stylesheet sizes it.
 def inline(path)
   File.read(path)
       .gsub(/\s*\n\s*/, '')
@@ -37,10 +37,10 @@ def cell(system, label, name, checkout)
   "<span title='#{label}: #{name}'>#{art}</span>"
 end
 
-# A traced symbol is markup like the other two systems and takes the colour around it. The
-# few still waiting to be traced are images, and stay the grey they were drawn in; one the
-# macOS that vendored the artwork could not draw at all falls back to a dashed circle,
-# the same stand-in the README uses, rather than to a gap.
+# A traced symbol is markup like the other two systems and takes the color around it. One
+# the macOS that vendored the artwork could not draw falls back to a dashed circle, the
+# same stand-in the README uses, rather than to a gap. The image branch is what a symbol
+# waiting to be traced would take, and nothing takes it today.
 def symbol(name, checkout)
   traced = "#{checkout}/vendor/sf-symbols/#{name}.svg"
   return inline traced if File.exist? traced
