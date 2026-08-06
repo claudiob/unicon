@@ -1,0 +1,58 @@
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.2
+
+# Declining `rubygems_mfa_required`: whether a push needs MFA is settled on the
+# RubyGems account, not asserted in the gem's own metadata.
+Gemspec/RequireMFA:
+  Enabled: false
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: true
+
+Layout/LineLength:
+  Max: 100
+
+# A name like `inventory_2` or `sticky_note_2` is Google's, not ours, and this gem's
+# whole point is to repeat published names exactly.
+Naming/VariableNumber:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: true
+  Exclude:
+    - test/**/*
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+# Off by default; keeps parentheses only where parsing needs them.
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  EnforcedStyle: omit_parentheses
+
+# Default is `separated`, one statement per mixin; ours share a line.
+Style/MixinGrouping:
+  EnforcedStyle: grouped
+
+# Demands `.freeze` on string constants, which this project never does.
+Style/MutableConstant:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# Not `comma`: that style forbids the comma unless each entry is on its own line.
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
