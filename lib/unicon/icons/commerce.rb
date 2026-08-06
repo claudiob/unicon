@@ -12,6 +12,7 @@ module Unicon
     ticket: { bootstrap: :ticket, ios: :ticket, android: :confirmation_number },
     barcode: { bootstrap: :upc, ios: :barcode, android: :barcode },
     qr_code: { bootstrap: :'qr-code', ios: :qrcode, android: :qr_code },
+    receipt: { bootstrap: :receipt, ios: :receipt, android: :receipt },
     invoice: { bootstrap: :'file-earmark-text', ios: :'doc.text', android: :receipt_long },
   }.freeze
 end

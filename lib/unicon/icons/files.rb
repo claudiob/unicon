@@ -8,6 +8,7 @@ module Unicon
     book: { bootstrap: :book, ios: :book, android: :book },
     note: { bootstrap: :sticky, ios: :'note.text', android: :sticky_note_2 },
     paperclip: { bootstrap: :paperclip, ios: :paperclip, android: :attach_file },
+    signature: { bootstrap: :pen, ios: :signature, android: :draw },
     box: { bootstrap: :box, ios: :shippingbox, android: :inventory_2 },
   }.freeze
 end

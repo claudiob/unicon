@@ -17,5 +17,8 @@ module Unicon
     thumbs_down: { bootstrap: :'hand-thumbs-down', ios: :'hand.thumbsdown', android: :thumb_down },
     trophy: { bootstrap: :trophy, ios: :trophy, android: :trophy },
     lightbulb: { bootstrap: :lightbulb, ios: :lightbulb, android: :lightbulb },
+    smiley: { bootstrap: :'emoji-smile', ios: :'face.smiling', android: :sentiment_satisfied },
+    award: { bootstrap: :award, ios: :rosette, android: :workspace_premium },
+    infinity: { bootstrap: :infinity, ios: :infinity, android: :all_inclusive },
   }.freeze
 end

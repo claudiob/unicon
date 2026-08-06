@@ -2,7 +2,7 @@ module Unicon
   # Reaching somebody, and hearing back from them
   COMMUNICATION = {
     phone: { bootstrap: :telephone, ios: :phone, android: :call },
-    mobile: { bootstrap: :phone, ios: :iphone, android: :mobile },
+    mobile: { bootstrap: :phone, ios: :smartphone, android: :mobile },
     envelope: { bootstrap: :envelope, ios: :envelope, android: :mail },
     chat: { bootstrap: :chat, ios: :message, android: :chat },
     bell: { bootstrap: :bell, ios: :bell, android: :notifications },

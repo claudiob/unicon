@@ -9,6 +9,8 @@ module Unicon
     pause: { bootstrap: :pause, ios: :pause, android: :pause },
     stop: { bootstrap: :stop, ios: :stop, android: :stop },
     skip_next: { bootstrap: :'skip-forward', ios: :'forward.end', android: :skip_next },
+    playlist: { bootstrap: :'collection-play', ios: :'play.square.stack', android: :video_library },
+    waveform: { bootstrap: :soundwave, ios: :waveform, android: :graphic_eq },
     music: { bootstrap: :'music-note', ios: :'music.note', android: :music_note },
     volume: { bootstrap: :'volume-up', ios: :'speaker.wave.2', android: :volume_up },
     headphones: { bootstrap: :headphones, ios: :headphones, android: :headphones },

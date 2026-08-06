@@ -7,6 +7,7 @@ module Unicon
     fire: { bootstrap: :fire, ios: :flame, android: :local_fire_department },
     droplet: { bootstrap: :droplet, ios: :drop, android: :water_drop },
     bolt: { bootstrap: :lightning, ios: :bolt, android: :bolt },
+    snow: { bootstrap: :snow, ios: :snowflake, android: :weather_snowy },
     tree: { bootstrap: :tree, ios: :tree, android: :park },
   }.freeze
 end

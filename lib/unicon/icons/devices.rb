@@ -8,5 +8,6 @@ module Unicon
     cloud: { bootstrap: :cloud, ios: :cloud, android: :cloud },
     wifi: { bootstrap: :wifi, ios: :wifi, android: :wifi },
     battery: { bootstrap: :battery, ios: :'battery.100', android: :battery_full },
+    terminal: { bootstrap: :terminal, ios: :terminal, android: :terminal },
   }.freeze
 end
