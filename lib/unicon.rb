@@ -31,7 +31,7 @@ module Unicon
   # Every name the gem answers to: the concepts, and the model names borrowing from them
   ICONS = {
     **MEANINGS, **ALIASES.transform_values { |concept| MEANINGS.fetch concept },
-  }.freeze
+  }.each_value(&:freeze).freeze
 
   # Those names in alphabetical order, so a picker built from them does not shuffle
   CONCEPTS = ICONS.keys.sort.freeze
