@@ -37,9 +37,14 @@ def cell(system, label, name, checkout)
   "<span title='#{label}: #{name}'>#{art}</span>"
 end
 
-# A symbol the macOS that vendored the artwork was too old to draw falls back to a dashed
-# circle, the same stand-in the README uses, rather than to a gap.
+# A traced symbol is markup like the other two systems and takes the colour around it. The
+# few still waiting to be traced are images, and stay the grey they were drawn in; one the
+# macOS that vendored the artwork could not draw at all falls back to a dashed circle,
+# the same stand-in the README uses, rather than to a gap.
 def symbol(name, checkout)
+  traced = "#{checkout}/vendor/sf-symbols/#{name}.svg"
+  return inline traced if File.exist? traced
+
   file = "#{checkout}/vendor/sf-symbols/#{name}.png"
   return inline "#{checkout}/assets/undrawn.svg" unless File.exist? file
 
