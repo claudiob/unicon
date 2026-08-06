@@ -30,10 +30,15 @@ def restyled(svg)
   coloured.gsub(/(width|height)="\d+"/, "\\1='#{ARTWORK_SIZE}'")
 end
 
-# The path an icon's artwork is vendored at, whether or not anything is there yet.
+# The path an icon's artwork is vendored at, whether or not anything is there yet. A symbol
+# is an SVG wherever the renderer managed to trace one, and the PNG it drew before that
+# everywhere else, so both spellings are looked for and the SVG is what a new one becomes.
 def artwork_path(system, name)
-  extension = system == :ios ? 'png' : 'svg'
-  "#{ARTWORK_DIRECTORIES.fetch system}/#{name}.#{extension}"
+  directory = ARTWORK_DIRECTORIES.fetch system
+  return "#{directory}/#{name}.svg" unless system == :ios
+
+  drawn = %W[#{directory}/#{name}.svg #{directory}/#{name}.png]
+  drawn.find { |path| File.exist? path } || drawn.first
 end
 
 # The path to a downloaded icon, fetching it the first time it is asked for.

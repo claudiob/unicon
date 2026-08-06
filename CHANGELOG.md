@@ -5,6 +5,11 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+- **Fix.** 119 of the 126 SF Symbols the table draws are vendored as SVG rather than as a
+  20-pixel PNG, so they stay sharp at any size and take the colour around them. Seven are
+  still PNGs: six the tracer would not commit to a match on, and `receipt`, which this
+  macOS cannot draw at all.
+
 ## [0.1.0] - 2026-08-05
 
 - **Feature.** One concept, three icon names. `Unicon.fetch :house` — or `Unicon[:house]`
