@@ -13,14 +13,14 @@ def artwork_cell(system, name)
   "![#{name}](#{path} \"#{name}\")"
 end
 
-# One row: the concept, what each system draws for it, and the model names that borrow it.
+# One row: the concept, the model names that borrow it, and what each system draws for it.
 def concept_row(concept, names, models)
   cells = [
     "`:#{concept}`",
+    models.map { |model| "`:#{model}`" }.join(' '),
     artwork_cell(:bootstrap, names.fetch(:bootstrap)),
     artwork_cell(:ios, names.fetch(:ios)),
     artwork_cell(:android, names.fetch(:android)),
-    models.map { |model| "`:#{model}`" }.join(' '),
   ]
   "| #{cells.join ' | '} |"
 end
@@ -42,7 +42,7 @@ task :readme do
   borrowers = Unicon::ALIASES.group_by { |_, concept| concept }
 
   rows = [
-    '| Concept | Bootstrap | iOS | Android | Models |',
+    '| Concept | Models | Bootstrap | iOS | Android |',
     '| --- | --- | --- | --- | --- |',
   ]
   Unicon::ICONS.sort.each do |concept, names|
