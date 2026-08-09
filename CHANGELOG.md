@@ -3,8 +3,11 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
-## [Unreleased]
+## [0.1.1] - 2026-08-09
 
+- **Fix.** `:franchise` resolves to `:building` rather than `:shop`, and `:market` to
+  `:shop` rather than `:map`: a franchise is the organization, a market is the place
+  that sells.
 - **Fix.** All 126 SF Symbols the table draws are vendored as SVG rather than as a
   20-pixel PNG, so they stay sharp at any size and take the color around them. The
   127th, `receipt`, has no artwork: this macOS cannot draw it, so the table shows the
