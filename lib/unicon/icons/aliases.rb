@@ -4,7 +4,7 @@ module Unicon
     address: :pin, agent: :badge, alert: :warning, announcement: :megaphone,
     answer: :question, api: :terminal, app: :window, appointment: :calendar_check,
     area: :map, assessment: :clipboard, attachment: :paperclip, audio: :waveform,
-    avatar: :account, backup: :cloud, banner: :image, bill: :invoice,
+    author: :account, avatar: :account, backup: :cloud, banner: :image, bill: :invoice,
     booking: :calendar_check, brand: :building, business: :building, call: :phone,
     campaign: :megaphone, category: :tag, charge: :credit_card, city: :building,
     client: :person, comment: :chat, company: :building, configuration: :gear,

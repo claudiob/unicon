@@ -108,7 +108,7 @@ drawn out. `Unicon.actions` names them all.
 <!-- concepts:start -->
 | Icon | Aliases | Bootstrap | iOS | Android |
 | --- | --- | --- | --- | --- |
-| `:account` | `:avatar` `:profile` | ![person-circle](vendor/bootstrap-icons/person-circle.svg "person-circle") | ![person.crop.circle](vendor/sf-symbols/person.crop.circle.svg "person.crop.circle") | ![account_circle](vendor/material-symbols/account_circle.svg "account_circle") |
+| `:account` | `:author` `:avatar` `:profile` | ![person-circle](vendor/bootstrap-icons/person-circle.svg "person-circle") | ![person.crop.circle](vendor/sf-symbols/person.crop.circle.svg "person.crop.circle") | ![account_circle](vendor/material-symbols/account_circle.svg "account_circle") |
 | `:airplane` |  | ![airplane](vendor/bootstrap-icons/airplane.svg "airplane") | ![airplane](vendor/sf-symbols/airplane.svg "airplane") | ![flight](vendor/material-symbols/flight.svg "flight") |
 | `:alarm` | `:deadline` | ![alarm](vendor/bootstrap-icons/alarm.svg "alarm") | ![alarm](vendor/sf-symbols/alarm.svg "alarm") | ![alarm](vendor/material-symbols/alarm.svg "alarm") |
 | `:archive` |  | ![archive](vendor/bootstrap-icons/archive.svg "archive") | ![archivebox](vendor/sf-symbols/archivebox.svg "archivebox") | ![archive](vendor/material-symbols/archive.svg "archive") |

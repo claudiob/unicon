@@ -3,6 +3,14 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
+## [1.0.0] - 2026-08-14
+
+- **Feature.** `:author` resolves to `:account`, beside `:avatar` and `:profile`: the
+  person behind a byline is drawn as a person. 304 names now resolve, 135 of them
+  aliases.
+- The API — `fetch`, `[]`, `icons`, `names`, `actions` — is unchanged and now stable,
+  which is what the major version says.
+
 ## [0.1.1] - 2026-08-09
 
 - **Fix.** `:franchise` resolves to `:building` rather than `:shop`, and `:market` to
