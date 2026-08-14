@@ -24,7 +24,7 @@ module Unicon
     order: :cart, organization: :building, package: :box, page: :document,
     password: :lock, payment: :credit_card, permission: :key, photo: :image,
     picture: :image, plan: :calendar, platform: :puzzle, plugin: :puzzle,
-    preference: :sliders, price: :tag, product: :box, profile: :account,
+    post: :document, preference: :sliders, price: :tag, product: :box, profile: :account,
     project: :folder, prompt: :terminal, provider: :briefcase, purchase: :cart,
     rating: :star, recording: :microphone, region: :map, reminder: :bell,
     review: :star, ride: :car, role: :badge, route: :signpost,

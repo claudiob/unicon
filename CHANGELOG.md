@@ -3,6 +3,11 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
+## [1.0.1] - 2026-08-14
+
+- **Feature.** `:post` resolves to `:document`, beside `:page` and `:form`: a post is
+  a piece of writing. 305 names now resolve, 136 of them aliases.
+
 ## [1.0.0] - 2026-08-14
 
 - **Feature.** `:author` resolves to `:account`, beside `:avatar` and `:profile`: the
