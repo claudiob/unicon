@@ -22,11 +22,18 @@ The keys are symbols and the names are frozen strings: a name is on its way into
 `"bi bi-#{icon}"` or into JSON either way, and `person.crop.circle` is a string long
 before it is a symbol.
 
-## Installation
+## How to install
 
-```ruby
-gem 'unicon'
-```
+To install on your system, run
+
+    gem install unicon
+
+To use inside a bundled Ruby project, add this line to the Gemfile:
+
+    gem 'unicon', '~> 2.0'
+
+Since the gem follows [Semantic Versioning](http://semver.org), indicating `~> *major*.*minor*`
+guarantees your project won’t occur in breaking changes whenever you `bundle update`.
 
 ## The three keys
 
