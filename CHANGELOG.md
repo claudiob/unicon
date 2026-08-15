@@ -3,6 +3,15 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
+## [2.0.0] - 2026-08-15
+
+- **Breaking.** `:brand` and `:franchise` were both `:building` aliases, so a sidebar
+  told them apart by nothing. Each now draws its own picture: a brand is its mark —
+  `c-circle` / `c.circle` / `copyright` — and a franchise its premises, `building` /
+  `building.2` / `corporate_fare`. Anyone reading either name gets new artwork.
+- **Feature.** `:sector` resolves to `:pie_chart`: a sector is a slice of the whole.
+  306 names now resolve, 135 of them aliases.
+
 ## [1.1.0] - 2026-08-14
 
 - **Feature.** `:post` resolves to `:document`, beside `:page` and `:form`: a post is

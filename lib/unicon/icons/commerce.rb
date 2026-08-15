@@ -4,6 +4,7 @@ module Unicon
     cart: { bootstrap: 'cart', ios: 'cart', android: 'shopping_cart' },
     bag: { bootstrap: 'bag', ios: 'bag', android: 'shopping_bag' },
     tag: { bootstrap: 'tag', ios: 'tag', android: 'sell' },
+    brand: { bootstrap: 'c-circle', ios: 'c.circle', android: 'copyright' },
     credit_card: { bootstrap: 'credit-card', ios: 'creditcard', android: 'credit_card' },
     cash: { bootstrap: 'cash', ios: 'banknote', android: 'payments' },
     wallet: { bootstrap: 'wallet', ios: 'wallet.pass', android: 'wallet' },

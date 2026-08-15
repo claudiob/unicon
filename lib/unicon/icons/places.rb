@@ -4,6 +4,7 @@ module Unicon
     house: { bootstrap: 'house', ios: 'house', android: 'home' },
     building: { bootstrap: 'building', ios: 'building', android: 'apartment' },
     shop: { bootstrap: 'shop', ios: 'storefront', android: 'storefront' },
+    franchise: { bootstrap: 'building', ios: 'building.2', android: 'corporate_fare' },
     bank: { bootstrap: 'bank', ios: 'building.columns', android: 'account_balance' },
     map: { bootstrap: 'map', ios: 'map', android: 'map' },
     pin: { bootstrap: 'geo-alt', ios: 'mappin', android: 'location_on' },
