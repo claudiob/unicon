@@ -3,6 +3,25 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
+## [3.0.0] - 2026-08-15
+
+- **Breaking.** `Unicon.actions` is documented as the doing words, but a third of it
+  named pictures instead: a caller asking for `:trash` was naming the bin rather than
+  the deletion. Thirteen now read as the deed — `plus` is `add`, `minus` `subtract`,
+  `check` `confirm`, `pencil` `edit`, `trash` `delete`, `scissors` `cut`, `person_add`
+  `add_member`, `person_remove` `remove_member`, `ellipsis` `truncate`, `menu`
+  `open_menu`, `sidebar` `toggle_sidebar`, `printer` `print`, and `eye_slash` `hide`.
+- **Breaking.** The eight directional names take verbs too, and deliberately different
+  ones, so the two pictures stay apart by their names alone. Every chevron is a `move`:
+  `chevron_up` is `move_up`, and the same for down, left and right. Every arrow is a
+  `point`: `arrow_up` is `point_up`, and the same three again.
+- `power` is the one name left in `ACTIONS` that is a thing rather than a deed. It is
+  drawn the same whether it turns something on or off, so a verb would assert a
+  direction the picture does not.
+- Nothing else moved. No alias pointed at a renamed name, so `:export`, `:import`,
+  `:sync` and `:subscription` still borrow the download, the upload, the refresh and
+  the repeat, and 306 names resolve as before, 135 of them aliases.
+
 ## [2.0.0] - 2026-08-15
 
 - **Breaking.** `:brand` and `:franchise` were both `:building` aliases, so a sidebar

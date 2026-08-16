@@ -30,7 +30,7 @@ To install on your system, run
 
 To use inside a bundled Ruby project, add this line to the Gemfile:
 
-    gem 'unicon', '~> 2.0'
+    gem 'unicon', '~> 3.0'
 
 Since the gem follows [Semantic Versioning](http://semver.org), indicating `~> *major*.*minor*`
 guarantees your project won’t occur in breaking changes whenever you `bundle update`.
@@ -63,8 +63,8 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 ## Three lists, and which one you want
 
 ```ruby
-Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    127
-Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            303
+Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    129
+Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            306
 Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       42
 ```
 
@@ -87,7 +87,7 @@ caller who wants the pictures as well as the names.
 ## Model names
 
 A host app looks an icon up by the name of the model it is rendering, and the more names
-answer, the less any app has to declare. 134 of them borrow the icons of a concept —
+answer, the less any app has to declare. 131 of them borrow the icons of a concept —
 `:user` takes the person, `:zip` takes the pin — and the Aliases column of the table below
 says which took which. They resolve without swelling the list a picker offers.
 
@@ -107,7 +107,7 @@ licenses them for developing applications for Apple-branded products, and this r
 is part of building one. They may not be redistributed for any other purpose, so anyone
 reusing this gem outside that context should show the names alone.
 
-The cells hold the icon and not its name, so the table stays readable at 127 rows. **The
+The cells hold the icon and not its name, so the table stays readable at 129 rows. **The
 name each system uses is on the icon**: hover it, or reach it with a screen reader, and
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
