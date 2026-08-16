@@ -64,8 +64,8 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 
 ```ruby
 Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    127
-Unicon.names    # => [:account, :address, :agent, :airplane, :alarm, :alert, ...]    303
-Unicon.actions  # => [:arrow_down, :arrow_left, :arrow_right, :arrow_up, ...]         42
+Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            303
+Unicon.actions  # => [:add, :add_member, :arrow_down, :arrow_left, ...]               42
 ```
 
 - `Unicon.icons` is **one name per distinct picture**. No two entries draw the same
@@ -73,9 +73,11 @@ Unicon.actions  # => [:arrow_down, :arrow_left, :arrow_right, :arrow_up, ...]   
 - `Unicon.names` is **the union of all three groups** — the icons, the actions and the
   model synonyms — and so every name that resolves. Ask for it to find out whether a
   name draws something; ask for `icons` when somebody is choosing one.
-- `Unicon.actions` is **the doing words**: `close`, `pencil`, every chevron. A toolbar
+- `Unicon.actions` is **the doing words**: `close`, `edit`, every chevron. A toolbar
   needs them and `Unicon[:close]` answers, but nobody has a Close model, so `icons`
-  leaves them out on purpose.
+  leaves them out on purpose. Each names the deed rather than the picture of it — `add`
+  rather than `plus`, `delete` rather than `trash` — bar the nine that point rather than
+  do: the four chevrons, the four arrows and `power`.
 
 All three are frozen, sorted arrays of symbols; only what `fetch` returns is strings.
 `Unicon::ICONS`, `Unicon::TABLE` and `Unicon::ACTIONS` are the tables behind them, for a
@@ -108,7 +110,7 @@ The cells hold the icon and not its name, so the table stays readable at 127 row
 name each system uses is on the icon**: hover it, or reach it with a screen reader, and
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
-The 42 action icons are not in the table. They are fetchable — `Unicon[:pencil]` answers
+The 42 action icons are not in the table. They are fetchable — `Unicon[:edit]` answers
 — but they name what an app does rather than what it has, and this table is `Unicon.icons`
 drawn out. `Unicon.actions` names them all.
 

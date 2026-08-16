@@ -15,8 +15,8 @@ module Unicon
     arrow_down: { bootstrap: 'arrow-down', ios: 'arrow.down', android: 'arrow_downward' },
     arrow_left: { bootstrap: 'arrow-left', ios: 'arrow.left', android: 'arrow_back' },
     arrow_right: { bootstrap: 'arrow-right', ios: 'arrow.right', android: 'arrow_forward' },
-    menu: { bootstrap: 'list', ios: 'line.3.horizontal', android: 'menu' },
-    ellipsis: { bootstrap: 'three-dots', ios: 'ellipsis', android: 'more_horiz' },
-    sidebar: { bootstrap: 'layout-sidebar', ios: 'sidebar.left', android: 'view_sidebar' },
+    open_menu: { bootstrap: 'list', ios: 'line.3.horizontal', android: 'menu' },
+    truncate: { bootstrap: 'three-dots', ios: 'ellipsis', android: 'more_horiz' },
+    toggle_sidebar: { bootstrap: 'layout-sidebar', ios: 'sidebar.left', android: 'view_sidebar' },
   }.freeze
 end

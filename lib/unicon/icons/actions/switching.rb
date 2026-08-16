@@ -10,7 +10,7 @@ module Unicon
       bootstrap: 'box-arrow-right', ios: 'rectangle.portrait.and.arrow.right', android: 'logout',
     },
     unlock: { bootstrap: 'unlock', ios: 'lock.open', android: 'lock_open' },
-    eye_slash: { bootstrap: 'eye-slash', ios: 'eye.slash', android: 'visibility_off' },
+    hide: { bootstrap: 'eye-slash', ios: 'eye.slash', android: 'visibility_off' },
     power: { bootstrap: 'power', ios: 'power', android: 'power_settings_new' },
   }.freeze
 end
