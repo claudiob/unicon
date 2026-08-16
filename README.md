@@ -65,7 +65,7 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 ```ruby
 Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    127
 Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            303
-Unicon.actions  # => [:add, :add_member, :arrow_down, :arrow_left, ...]               42
+Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       42
 ```
 
 - `Unicon.icons` is **one name per distinct picture**. No two entries draw the same
@@ -73,11 +73,12 @@ Unicon.actions  # => [:add, :add_member, :arrow_down, :arrow_left, ...]         
 - `Unicon.names` is **the union of all three groups** — the icons, the actions and the
   model synonyms — and so every name that resolves. Ask for it to find out whether a
   name draws something; ask for `icons` when somebody is choosing one.
-- `Unicon.actions` is **the doing words**: `close`, `edit`, every chevron. A toolbar
+- `Unicon.actions` is **the doing words**: `close`, `edit`, every `move`. A toolbar
   needs them and `Unicon[:close]` answers, but nobody has a Close model, so `icons`
   leaves them out on purpose. Each names the deed rather than the picture of it — `add`
-  rather than `plus`, `delete` rather than `trash` — bar the nine that point rather than
-  do: the four chevrons, the four arrows and `power`.
+  rather than `plus`, `delete` rather than `trash` — bar `power`, which is drawn the same
+  whether it turns something on or off. The four chevrons are `move_up` and its three
+  directions, the four arrows `point_up` and its three, so the families stay apart.
 
 All three are frozen, sorted arrays of symbols; only what `fetch` returns is strings.
 `Unicon::ICONS`, `Unicon::TABLE` and `Unicon::ACTIONS` are the tables behind them, for a
