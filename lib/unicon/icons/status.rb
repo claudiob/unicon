@@ -13,6 +13,7 @@ module Unicon
     star: { bootstrap: 'star', ios: 'star', android: 'star' },
     heart: { bootstrap: 'heart', ios: 'heart', android: 'favorite' },
     bookmark: { bootstrap: 'bookmark', ios: 'bookmark', android: 'bookmark' },
+    bookmarked: { bootstrap: 'bookmark-fill', ios: 'bookmark.fill', android: 'bookmark_added' },
     thumbs_up: { bootstrap: 'hand-thumbs-up', ios: 'hand.thumbsup', android: 'thumb_up' },
     thumbs_down: { bootstrap: 'hand-thumbs-down', ios: 'hand.thumbsdown', android: 'thumb_down' },
     trophy: { bootstrap: 'trophy', ios: 'trophy', android: 'trophy' },

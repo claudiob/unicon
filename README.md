@@ -134,6 +134,7 @@ drawn out. `Unicon.actions` names them all.
 | `:bolt` |  | ![lightning](vendor/bootstrap-icons/lightning.svg "lightning") | ![bolt](vendor/sf-symbols/bolt.svg "bolt") | ![bolt](vendor/material-symbols/bolt.svg "bolt") |
 | `:book` |  | ![book](vendor/bootstrap-icons/book.svg "book") | ![book](vendor/sf-symbols/book.svg "book") | ![book](vendor/material-symbols/book.svg "book") |
 | `:bookmark` |  | ![bookmark](vendor/bootstrap-icons/bookmark.svg "bookmark") | ![bookmark](vendor/sf-symbols/bookmark.svg "bookmark") | ![bookmark](vendor/material-symbols/bookmark.svg "bookmark") |
+| `:bookmarked` |  | ![bookmark-fill](vendor/bootstrap-icons/bookmark-fill.svg "bookmark-fill") | ![bookmark.fill](vendor/sf-symbols/bookmark.fill.svg "bookmark.fill") | ![bookmark_added](vendor/material-symbols/bookmark_added.svg "bookmark_added") |
 | `:box` | `:inventory` `:item` `:package` `:product` | ![box](vendor/bootstrap-icons/box.svg "box") | ![shippingbox](vendor/sf-symbols/shippingbox.svg "shippingbox") | ![inventory_2](vendor/material-symbols/inventory_2.svg "inventory_2") |
 | `:brand` |  | ![c-circle](vendor/bootstrap-icons/c-circle.svg "c-circle") | ![c.circle](vendor/sf-symbols/c.circle.svg "c.circle") | ![copyright](vendor/material-symbols/copyright.svg "copyright") |
 | `:briefcase` | `:provider` | ![briefcase](vendor/bootstrap-icons/briefcase.svg "briefcase") | ![briefcase](vendor/sf-symbols/briefcase.svg "briefcase") | ![work](vendor/material-symbols/work.svg "work") |

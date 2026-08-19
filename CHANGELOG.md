@@ -3,6 +3,15 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
+## [3.1.0] - 2026-08-19
+
+- **Feature.** `:bookmarked` is the state beside `:bookmark`'s action, so a list can
+  draw a row somebody has kept apart from one they have not. A variant axis would have
+  made all 171 concepts answer whether they fill; two concepts answer only for
+  themselves. Android names it `bookmark_added` rather than a filled bookmark, Material
+  Symbols Outlined having no filled name to give — fill there is a font axis. 307 names
+  now resolve, 135 of them aliases.
+
 ## [3.0.0] - 2026-08-15
 
 - **Breaking.** `Unicon.actions` is documented as the doing words, but a third of it
