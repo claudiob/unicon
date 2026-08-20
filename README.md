@@ -63,9 +63,9 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 ## Three lists, and which one you want
 
 ```ruby
-Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    129
-Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            306
-Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       42
+Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    131
+Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            311
+Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       43
 ```
 
 - `Unicon.icons` is **one name per distinct picture**. No two entries draw the same
@@ -87,7 +87,7 @@ caller who wants the pictures as well as the names.
 ## Model names
 
 A host app looks an icon up by the name of the model it is rendering, and the more names
-answer, the less any app has to declare. 131 of them borrow the icons of a concept —
+answer, the less any app has to declare. 137 of them borrow the icons of a concept —
 `:user` takes the person, `:zip` takes the pin — and the Aliases column of the table below
 says which took which. They resolve without swelling the list a picker offers.
 
@@ -107,7 +107,7 @@ licenses them for developing applications for Apple-branded products, and this r
 is part of building one. They may not be redistributed for any other purpose, so anyone
 reusing this gem outside that context should show the names alone.
 
-The cells hold the icon and not its name, so the table stays readable at 129 rows. **The
+The cells hold the icon and not its name, so the table stays readable at 131 rows. **The
 name each system uses is on the icon**: hover it, or reach it with a screen reader, and
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
@@ -131,7 +131,7 @@ drawn out. `Unicon.actions` names them all.
 | `:battery` |  | ![battery](vendor/bootstrap-icons/battery.svg "battery") | ![battery.100](vendor/sf-symbols/battery.100.svg "battery.100") | ![battery_full](vendor/material-symbols/battery_full.svg "battery_full") |
 | `:bell` | `:notification` `:reminder` | ![bell](vendor/bootstrap-icons/bell.svg "bell") | ![bell](vendor/sf-symbols/bell.svg "bell") | ![notifications](vendor/material-symbols/notifications.svg "notifications") |
 | `:bicycle` |  | ![bicycle](vendor/bootstrap-icons/bicycle.svg "bicycle") | ![bicycle](vendor/sf-symbols/bicycle.svg "bicycle") | ![directions_bike](vendor/material-symbols/directions_bike.svg "directions_bike") |
-| `:bolt` |  | ![lightning](vendor/bootstrap-icons/lightning.svg "lightning") | ![bolt](vendor/sf-symbols/bolt.svg "bolt") | ![bolt](vendor/material-symbols/bolt.svg "bolt") |
+| `:bolt` | `:boost` | ![lightning](vendor/bootstrap-icons/lightning.svg "lightning") | ![bolt](vendor/sf-symbols/bolt.svg "bolt") | ![bolt](vendor/material-symbols/bolt.svg "bolt") |
 | `:book` |  | ![book](vendor/bootstrap-icons/book.svg "book") | ![book](vendor/sf-symbols/book.svg "book") | ![book](vendor/material-symbols/book.svg "book") |
 | `:bookmark` |  | ![bookmark](vendor/bootstrap-icons/bookmark.svg "bookmark") | ![bookmark](vendor/sf-symbols/bookmark.svg "bookmark") | ![bookmark](vendor/material-symbols/bookmark.svg "bookmark") |
 | `:bookmarked` |  | ![bookmark-fill](vendor/bootstrap-icons/bookmark-fill.svg "bookmark-fill") | ![bookmark.fill](vendor/sf-symbols/bookmark.fill.svg "bookmark.fill") | ![bookmark_added](vendor/material-symbols/bookmark_added.svg "bookmark_added") |
@@ -149,6 +149,7 @@ drawn out. `Unicon.actions` names them all.
 | `:cash` | `:cost` | ![cash](vendor/bootstrap-icons/cash.svg "cash") | ![banknote](vendor/sf-symbols/banknote.svg "banknote") | ![payments](vendor/material-symbols/payments.svg "payments") |
 | `:chat` | `:comment` `:conversation` `:message` | ![chat](vendor/bootstrap-icons/chat.svg "chat") | ![message](vendor/sf-symbols/message.svg "message") | ![chat](vendor/material-symbols/chat.svg "chat") |
 | `:check_circle` |  | ![check-circle](vendor/bootstrap-icons/check-circle.svg "check-circle") | ![checkmark.circle](vendor/sf-symbols/checkmark.circle.svg "checkmark.circle") | ![check_circle](vendor/material-symbols/check_circle.svg "check_circle") |
+| `:checklist` | `:pick` | ![card-checklist](vendor/bootstrap-icons/card-checklist.svg "card-checklist") | ![checklist.checked](vendor/sf-symbols/checklist.checked.svg "checklist.checked") | ![checklist](vendor/material-symbols/checklist.svg "checklist") |
 | `:circle` |  | ![circle](vendor/bootstrap-icons/circle.svg "circle") | ![circle](vendor/sf-symbols/circle.svg "circle") | ![circle](vendor/material-symbols/circle.svg "circle") |
 | `:clipboard` | `:assessment` `:survey` | ![clipboard](vendor/bootstrap-icons/clipboard.svg "clipboard") | ![list.clipboard](vendor/sf-symbols/list.clipboard.svg "list.clipboard") | ![content_paste](vendor/material-symbols/content_paste.svg "content_paste") |
 | `:clock` | `:history` `:session` `:shift` | ![clock](vendor/bootstrap-icons/clock.svg "clock") | ![clock](vendor/sf-symbols/clock.svg "clock") | ![schedule](vendor/material-symbols/schedule.svg "schedule") |

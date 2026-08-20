@@ -5,6 +5,16 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+- **Feature.** `:checklist` is the list with ticks, the picture a warehouse pick list
+  wants and one `:clipboard` cannot stand in for: the clipboard is empty paperwork in all
+  three sets. `:pick` borrows it, beside the `:inventory`, `:shipment` and `:delivery` a
+  warehouse already looks up. iOS is `checklist.checked` rather than the plain
+  `checklist`, which `:task` has drawn since the first release — two concepts may not
+  draw the same picture, and the ticked box is the truer half of the pair anyway.
+- **Feature.** `:boost` borrows the bolt. Promotion is a jolt of electricity in all three
+  sets and a rocket in only two, SF Symbols publishing none, so the rocket the word wants
+  is a concept this gem cannot list. 311 names now resolve, 137 of them aliases.
+
 ## [3.2.0] - 2026-08-19
 
 - **Feature.** `:drag` is the grip a row is taken hold of by, which every list that a
