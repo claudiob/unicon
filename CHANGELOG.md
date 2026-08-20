@@ -3,6 +3,16 @@
 Every entry says whether it is a fix, a feature or a breaking change, since that is
 what decides both whether a reader can take it and what the next version number is.
 
+## [Unreleased]
+
+- **Feature.** `:drag` is the grip a row is taken hold of by, which every list that a
+  reader puts in order by hand needs and none of the three sets spells alike:
+  Bootstrap draws `grip-vertical`, SF Symbols reaches for `line.3.horizontal` — the
+  bars iOS has used for a reorder grabber since the first table view — and Material
+  names the dots `drag_indicator`. It sits beside `:sort` under editing, since both
+  are ways of putting rows in an order and only the hand differs. 308 names now
+  resolve.
+
 ## [3.1.0] - 2026-08-19
 
 - **Feature.** `:bookmarked` is the state beside `:bookmark`'s action, so a list can

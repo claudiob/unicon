@@ -111,7 +111,7 @@ The cells hold the icon and not its name, so the table stays readable at 129 row
 name each system uses is on the icon**: hover it, or reach it with a screen reader, and
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
-The 42 action icons are not in the table. They are fetchable — `Unicon[:edit]` answers
+The 43 action icons are not in the table. They are fetchable — `Unicon[:edit]` answers
 — but they name what an app does rather than what it has, and this table is `Unicon.icons`
 drawn out. `Unicon.actions` names them all.
 
