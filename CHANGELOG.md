@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.3.0] - 2026-08-19
+
 - **Feature.** `:checklist` is the list with ticks, the picture a warehouse pick list
   wants and one `:clipboard` cannot stand in for: the clipboard is empty paperwork in all
   three sets. `:pick` borrows it, beside the `:inventory`, `:shipment` and `:delivery` a
