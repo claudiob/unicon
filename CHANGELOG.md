@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.2.0] - 2026-08-19
+
 - **Feature.** `:drag` is the grip a row is taken hold of by, which every list that a
   reader puts in order by hand needs and none of the three sets spells alike:
   Bootstrap draws `grip-vertical`, SF Symbols reaches for `line.3.horizontal` — the
