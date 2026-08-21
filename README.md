@@ -64,7 +64,7 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 
 ```ruby
 Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    132
-Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            314
+Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            315
 Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       43
 ```
 
@@ -87,7 +87,7 @@ caller who wants the pictures as well as the names.
 ## Model names
 
 A host app looks an icon up by the name of the model it is rendering, and the more names
-answer, the less any app has to declare. 139 of them borrow the icons of a concept —
+answer, the less any app has to declare. 140 of them borrow the icons of a concept —
 `:user` takes the person, `:zip` takes the pin — and the Aliases column of the table below
 says which took which. They resolve without swelling the list a picker offers.
 
@@ -244,7 +244,7 @@ drawn out. `Unicon.actions` names them all.
 | `:video` | `:movie` | ![camera-video](vendor/bootstrap-icons/camera-video.svg "camera-video") | ![video](vendor/sf-symbols/video.svg "video") | ![videocam](vendor/material-symbols/videocam.svg "videocam") |
 | `:volume` |  | ![volume-up](vendor/bootstrap-icons/volume-up.svg "volume-up") | ![speaker.wave.2](vendor/sf-symbols/speaker.wave.2.svg "speaker.wave.2") | ![volume_up](vendor/material-symbols/volume_up.svg "volume_up") |
 | `:wallet` |  | ![wallet](vendor/bootstrap-icons/wallet.svg "wallet") | ![wallet.pass](vendor/sf-symbols/wallet.pass.svg "wallet.pass") | ![wallet](vendor/material-symbols/wallet.svg "wallet") |
-| `:wand` | `:prediction` `:reading` | ![magic](vendor/bootstrap-icons/magic.svg "magic") | ![wand.and.stars](assets/undrawn.svg "wand.and.stars") | ![wand_stars](vendor/material-symbols/wand_stars.svg "wand_stars") |
+| `:wand` | `:inquiry` `:prediction` `:reading` | ![magic](vendor/bootstrap-icons/magic.svg "magic") | ![wand.and.stars](assets/undrawn.svg "wand.and.stars") | ![wand_stars](vendor/material-symbols/wand_stars.svg "wand_stars") |
 | `:warning` | `:alert` `:issue` | ![exclamation-triangle](vendor/bootstrap-icons/exclamation-triangle.svg "exclamation-triangle") | ![exclamationmark.triangle](vendor/sf-symbols/exclamationmark.triangle.svg "exclamationmark.triangle") | ![warning](vendor/material-symbols/warning.svg "warning") |
 | `:waveform` | `:audio` `:echo` | ![soundwave](vendor/bootstrap-icons/soundwave.svg "soundwave") | ![waveform](vendor/sf-symbols/waveform.svg "waveform") | ![graphic_eq](vendor/material-symbols/graphic_eq.svg "graphic_eq") |
 | `:wifi` |  | ![wifi](vendor/bootstrap-icons/wifi.svg "wifi") | ![wifi](vendor/sf-symbols/wifi.svg "wifi") | ![wifi](vendor/material-symbols/wifi.svg "wifi") |

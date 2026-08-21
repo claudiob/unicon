@@ -5,6 +5,11 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+- **Feature.** `:inquiry` borrows the wand, beside the `:reading` and `:prediction`
+  already drawn by it. A question put to a fortune teller and the answer she gives are
+  the same sitting under two names, and an app that lists both wants one picture for
+  them. 315 names now resolve, 140 of them aliases.
+
 ## [3.4.0] - 2026-08-20
 
 - **Feature.** `:wand` is the wand throwing off stars, the nearest thing the three sets
