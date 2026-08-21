@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.4.0] - 2026-08-20
+
 - **Feature.** `:wand` is the wand throwing off stars, the nearest thing the three sets
   publish to a crystal ball: none of them draws one, so a fortune teller's trade borrows
   the magic instead. Bootstrap calls it `magic`, SF Symbols `wand.and.stars`, Material
