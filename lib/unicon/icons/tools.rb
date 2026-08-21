@@ -7,6 +7,7 @@ module Unicon
     hammer: { bootstrap: 'hammer', ios: 'hammer', android: 'hardware' },
     wrench: { bootstrap: 'wrench', ios: 'wrench', android: 'build' },
     ruler: { bootstrap: 'rulers', ios: 'ruler', android: 'straighten' },
+    wand: { bootstrap: 'magic', ios: 'wand.and.stars', android: 'wand_stars' },
     puzzle: { bootstrap: 'puzzle', ios: 'puzzlepiece', android: 'extension' },
     briefcase: { bootstrap: 'briefcase', ios: 'briefcase', android: 'work' },
     task: { bootstrap: 'check2-square', ios: 'checklist', android: 'task_alt' },

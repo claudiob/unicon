@@ -5,6 +5,13 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+- **Feature.** `:wand` is the wand throwing off stars, the nearest thing the three sets
+  publish to a crystal ball: none of them draws one, so a fortune teller's trade borrows
+  the magic instead. Bootstrap calls it `magic`, SF Symbols `wand.and.stars`, Material
+  `wand_stars` — one picture under three spellings, which is the whole reason this gem
+  exists. `:reading` and `:prediction` borrow it, naming what the sitting produces rather
+  than who produces it. 314 names now resolve, 139 of them aliases.
+
 ## [3.3.0] - 2026-08-19
 
 - **Feature.** `:checklist` is the list with ticks, the picture a warehouse pick list

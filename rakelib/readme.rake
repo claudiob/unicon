@@ -1,9 +1,10 @@
 # Stands in for a symbol the rendering machine is too old to draw, since a cell shows
 # artwork and never a name. Ours, not Apple's, and explained under the table.
 UNDRAWN = 'assets/undrawn.svg'
-UNDRAWN_NOTE = 'A dashed circle is a symbol newer than the macOS that drew this table, ' \
-               'which knows the SF Symbols 5 set. Hover it for the name, which resolves ' \
-               'in an app built against a newer SDK.'
+UNDRAWN_NOTE = 'A dashed circle is a symbol the Mac that drew this table could not put ' \
+               'an outline to: newer than the SF Symbols 5 set it knows, or one it draws ' \
+               'but the renderer would name no glyph for. Hover it for the name, which ' \
+               'resolves in an app all the same.'
 
 # One cell: the icon alone, carrying its name where a hover and a screen reader find it.
 def artwork_cell(system, name)

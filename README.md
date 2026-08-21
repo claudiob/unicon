@@ -63,8 +63,8 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 ## Three lists, and which one you want
 
 ```ruby
-Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    131
-Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            311
+Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    132
+Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            314
 Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       43
 ```
 
@@ -87,7 +87,7 @@ caller who wants the pictures as well as the names.
 ## Model names
 
 A host app looks an icon up by the name of the model it is rendering, and the more names
-answer, the less any app has to declare. 137 of them borrow the icons of a concept —
+answer, the less any app has to declare. 139 of them borrow the icons of a concept —
 `:user` takes the person, `:zip` takes the pin — and the Aliases column of the table below
 says which took which. They resolve without swelling the list a picker offers.
 
@@ -107,7 +107,7 @@ licenses them for developing applications for Apple-branded products, and this r
 is part of building one. They may not be redistributed for any other purpose, so anyone
 reusing this gem outside that context should show the names alone.
 
-The cells hold the icon and not its name, so the table stays readable at 131 rows. **The
+The cells hold the icon and not its name, so the table stays readable at 132 rows. **The
 name each system uses is on the icon**: hover it, or reach it with a screen reader, and
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
@@ -244,13 +244,14 @@ drawn out. `Unicon.actions` names them all.
 | `:video` | `:movie` | ![camera-video](vendor/bootstrap-icons/camera-video.svg "camera-video") | ![video](vendor/sf-symbols/video.svg "video") | ![videocam](vendor/material-symbols/videocam.svg "videocam") |
 | `:volume` |  | ![volume-up](vendor/bootstrap-icons/volume-up.svg "volume-up") | ![speaker.wave.2](vendor/sf-symbols/speaker.wave.2.svg "speaker.wave.2") | ![volume_up](vendor/material-symbols/volume_up.svg "volume_up") |
 | `:wallet` |  | ![wallet](vendor/bootstrap-icons/wallet.svg "wallet") | ![wallet.pass](vendor/sf-symbols/wallet.pass.svg "wallet.pass") | ![wallet](vendor/material-symbols/wallet.svg "wallet") |
+| `:wand` | `:prediction` `:reading` | ![magic](vendor/bootstrap-icons/magic.svg "magic") | ![wand.and.stars](assets/undrawn.svg "wand.and.stars") | ![wand_stars](vendor/material-symbols/wand_stars.svg "wand_stars") |
 | `:warning` | `:alert` `:issue` | ![exclamation-triangle](vendor/bootstrap-icons/exclamation-triangle.svg "exclamation-triangle") | ![exclamationmark.triangle](vendor/sf-symbols/exclamationmark.triangle.svg "exclamationmark.triangle") | ![warning](vendor/material-symbols/warning.svg "warning") |
 | `:waveform` | `:audio` `:echo` | ![soundwave](vendor/bootstrap-icons/soundwave.svg "soundwave") | ![waveform](vendor/sf-symbols/waveform.svg "waveform") | ![graphic_eq](vendor/material-symbols/graphic_eq.svg "graphic_eq") |
 | `:wifi` |  | ![wifi](vendor/bootstrap-icons/wifi.svg "wifi") | ![wifi](vendor/sf-symbols/wifi.svg "wifi") | ![wifi](vendor/material-symbols/wifi.svg "wifi") |
 | `:window` | `:app` | ![window](vendor/bootstrap-icons/window.svg "window") | ![macwindow](vendor/sf-symbols/macwindow.svg "macwindow") | ![web_asset](vendor/material-symbols/web_asset.svg "web_asset") |
 | `:wrench` |  | ![wrench](vendor/bootstrap-icons/wrench.svg "wrench") | ![wrench](vendor/sf-symbols/wrench.svg "wrench") | ![build](vendor/material-symbols/build.svg "build") |
 
-A dashed circle is a symbol newer than the macOS that drew this table, which knows the SF Symbols 5 set. Hover it for the name, which resolves in an app built against a newer SDK.
+A dashed circle is a symbol the Mac that drew this table could not put an outline to: newer than the SF Symbols 5 set it knows, or one it draws but the renderer would name no glyph for. Hover it for the name, which resolves in an app all the same.
 <!-- concepts:end -->
 
 ## Where the names come from
@@ -285,9 +286,13 @@ gray and the same box.
 That rendering is done by the machine running `rake readme`, and a machine only knows the
 symbols its own system shipped with. Anything newer gets `assets/undrawn.svg` — a dashed
 circle of our own drawing, not Apple's — with the symbol's name still on it to hover.
-One row is in that state today: `:receipt`, whose SF symbol arrived in iOS 18.2, drawn on
-a Mac running macOS 14.3. `rake validate` has already proved every name real, which is
-why a symbol this Mac cannot draw is reported rather than fatal.
+Three rows are in that state today, the table having been drawn on a Mac running macOS
+14.3: `:receipt`, whose SF symbol arrived in iOS 18.2 and so is newer than that Mac, and
+`:franchise` and `:wand`, whose symbols it does draw but whose outline the renderer would
+not commit to — it matches the picture the system draws against every glyph in Apple's
+fallback font, and a wrong glyph is worse than a missing one. `rake validate` has already
+proved every name real, which is why a symbol this Mac cannot draw is reported rather
+than fatal.
 
 ## License
 
