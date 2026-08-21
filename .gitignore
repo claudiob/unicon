@@ -1,0 +1,10 @@
+# Build artifacts of the gem on `main`, which this branch only ever holds by accident:
+# a worktree of `main` is made and thrown away by build-sampler.rb, and what it leaves
+# behind is not the page.
+/.bundle/
+/Gemfile.lock
+/coverage/
+/doc/
+/pkg/
+*.gem
+/tmp/
