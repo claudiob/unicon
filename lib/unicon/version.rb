@@ -1,4 +1,4 @@
 module Unicon
   # Version of the gem, read by the gemspec and by hosts checking compatibility.
-  VERSION = '3.4.0'
+  VERSION = '3.5.0'
 end

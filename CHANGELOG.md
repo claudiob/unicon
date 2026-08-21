@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.5.0] - 2026-08-21
+
 - **Feature.** `:inquiry` borrows the wand, beside the `:reading` and `:prediction`
   already drawn by it. A question put to a fortune teller and the answer she gives are
   the same sitting under two names, and an app that lists both wants one picture for
