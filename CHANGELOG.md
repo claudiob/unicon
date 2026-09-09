@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.6.0] - 2026-09-08
+
 - **Feature.** `:expand` and `:collapse` are the two diagonal arrows, parting and meeting:
   what a control that shows more of a page, or folds it back, wears. Bootstrap calls them
   `arrows-angle-expand` and `arrows-angle-contract`, SF Symbols
