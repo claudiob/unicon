@@ -64,8 +64,8 @@ blank. A concept may be given as a string, so `Unicon['contact']` works too.
 
 ```ruby
 Unicon.icons    # => [:account, :airplane, :alarm, :archive, :award, :badge, ...]    132
-Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            315
-Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       43
+Unicon.names    # => [:account, :add, :add_member, :address, :agent, ...]            317
+Unicon.actions  # => [:add, :add_member, :close, :confirm, ...]                       45
 ```
 
 - `Unicon.icons` is **one name per distinct picture**. No two entries draw the same
@@ -111,7 +111,7 @@ The cells hold the icon and not its name, so the table stays readable at 132 row
 name each system uses is on the icon**: hover it, or reach it with a screen reader, and
 `Unicon[:search][:ios]` reads back as `magnifyingglass`.
 
-The 43 action icons are not in the table. They are fetchable — `Unicon[:edit]` answers
+The 45 action icons are not in the table. They are fetchable — `Unicon[:edit]` answers
 — but they name what an app does rather than what it has, and this table is `Unicon.icons`
 drawn out. `Unicon.actions` names them all.
 

@@ -15,6 +15,14 @@ module Unicon
     point_down: { bootstrap: 'arrow-down', ios: 'arrow.down', android: 'arrow_downward' },
     point_left: { bootstrap: 'arrow-left', ios: 'arrow.left', android: 'arrow_back' },
     point_right: { bootstrap: 'arrow-right', ios: 'arrow.right', android: 'arrow_forward' },
+    expand: {
+      bootstrap: 'arrows-angle-expand', ios: 'arrow.up.left.and.arrow.down.right',
+      android: 'open_in_full',
+    },
+    collapse: {
+      bootstrap: 'arrows-angle-contract', ios: 'arrow.down.right.and.arrow.up.left',
+      android: 'close_fullscreen',
+    },
     open_menu: { bootstrap: 'list', ios: 'line.3.horizontal', android: 'menu' },
     truncate: { bootstrap: 'three-dots', ios: 'ellipsis', android: 'more_horiz' },
     toggle_sidebar: { bootstrap: 'layout-sidebar', ios: 'sidebar.left', android: 'view_sidebar' },

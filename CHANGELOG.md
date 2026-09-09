@@ -5,6 +5,13 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+- **Feature.** `:expand` and `:collapse` are the two diagonal arrows, parting and meeting:
+  what a control that shows more of a page, or folds it back, wears. Bootstrap calls them
+  `arrows-angle-expand` and `arrows-angle-contract`, SF Symbols
+  `arrow.up.left.and.arrow.down.right` and `arrow.down.right.and.arrow.up.left`, Material
+  `open_in_full` and `close_fullscreen`. Not `:contract`, which already names a signed
+  agreement's signature and stays so. 317 names now resolve, 140 of them aliases.
+
 ## [3.5.0] - 2026-08-21
 
 - **Feature.** `:inquiry` borrows the wand, beside the `:reading` and `:prediction`
