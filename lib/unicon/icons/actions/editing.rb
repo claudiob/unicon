@@ -12,6 +12,8 @@ module Unicon
     undo: { bootstrap: 'arrow-counterclockwise', ios: 'arrow.uturn.backward', android: 'undo' },
     refresh: { bootstrap: 'arrow-clockwise', ios: 'arrow.clockwise', android: 'refresh' },
     sort: { bootstrap: 'sort-down', ios: 'arrow.up.arrow.down', android: 'sort' },
+    sort_asc: { bootstrap: 'sort-up', ios: 'arrowtriangle.up', android: 'arrow_drop_up' },
+    sort_desc: { bootstrap: 'sort-down', ios: 'arrowtriangle.down', android: 'arrow_drop_down' },
     drag: { bootstrap: 'grip-vertical', ios: 'line.3.horizontal', android: 'drag_indicator' },
     zoom_in: { bootstrap: 'zoom-in', ios: 'plus.magnifyingglass', android: 'zoom_in' },
     zoom_out: { bootstrap: 'zoom-out', ios: 'minus.magnifyingglass', android: 'zoom_out' },
