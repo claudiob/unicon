@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.7.0] - 2026-09-17
+
 - **Feature.** `:sort_asc` and `:sort_desc` are the order a column is sorted in, beside the
   `:sort` that says only that it can be. Bootstrap calls them `sort-up` and `sort-down`, SF
   Symbols `arrowtriangle.up` and `arrowtriangle.down`, Material `arrow_drop_up` and
