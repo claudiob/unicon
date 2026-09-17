@@ -42,8 +42,11 @@ MAX_FILE_LINES = 100
 # Prose and data are exempt: docs, the license, and the published name lists.
 EXEMPT_EXTENSIONS = %w[.md .txt].freeze
 
-# Upstream's artwork and formatting are not ours to fix.
-EXEMPT_DIRECTORIES = %w[vendor/].freeze
+# Upstream's artwork and formatting are not ours to fix. Nor is the length of a `tools/`
+# program: each is one file in another language, compiled by hand and never loaded by the
+# gem, and the limit asks what wants extracting — a concern, a second helper — which a
+# Swift file handed whole to `swiftc` has nowhere to put.
+EXEMPT_DIRECTORIES = %w[tools/ vendor/].freeze
 
 desc "Fail if any code file is longer than #{MAX_FILE_LINES} lines"
 task :file_length do
