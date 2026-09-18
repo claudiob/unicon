@@ -34,7 +34,7 @@ module Unicon
     summary: :document, supplier: :truck, survey: :clipboard, sync: :refresh,
     team: :people, technician: :toolbox, territory: :map, todo: :task, token: :key,
     track: :music, transaction: :credit_card, trip: :map, user: :person,
-    vehicle: :car, vendor: :shop, vertical: :bar_chart, view: :eye,
+    vehicle: :car, vendor: :shop, vertical: :bar_chart, view: :eye, visit: :clock,
     zip: :pin,
   }.freeze
 end

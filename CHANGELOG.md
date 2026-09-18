@@ -5,6 +5,13 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.9.0] - 2026-09-18
+
+- **Feature.** `:visit` is a call somebody pays at an appointed time, drawn as the `:clock`
+  already is — Bootstrap's `clock`, SF Symbols' `clock`, Material's `schedule`. An alias
+  rather than a concept: what a visit is known by is when it is, and the calendar faces are
+  spoken for by a booking and an appointment. 321 names now resolve, 142 of them aliases.
+
 ## [3.8.0] - 2026-09-18
 
 - **Feature.** `:technician` is the person a trade sends out to do the work, drawn as the
