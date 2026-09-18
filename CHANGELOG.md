@@ -5,6 +5,8 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.8.0] - 2026-09-18
+
 - **Feature.** `:technician` is the person a trade sends out to do the work, drawn as the
   `:toolbox` already is — Bootstrap's `tools`, SF Symbols' `wrench.and.screwdriver`, Material's
   `handyman`. An alias rather than a concept of its own, since a technician is known by what
