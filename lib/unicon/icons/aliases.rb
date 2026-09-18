@@ -32,7 +32,7 @@ module Unicon
     shift: :clock, shipment: :truck, site: :globe, source: :signpost,
     specialty: :award, staff: :people, state: :map, subscription: :repeat,
     summary: :document, supplier: :truck, survey: :clipboard, sync: :refresh,
-    team: :people, territory: :map, todo: :task, token: :key,
+    team: :people, technician: :toolbox, territory: :map, todo: :task, token: :key,
     track: :music, transaction: :credit_card, trip: :map, user: :person,
     vehicle: :car, vendor: :shop, vertical: :bar_chart, view: :eye,
     zip: :pin,

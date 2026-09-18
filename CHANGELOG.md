@@ -5,6 +5,13 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+- **Feature.** `:technician` is the person a trade sends out to do the work, drawn as the
+  `:toolbox` already is — Bootstrap's `tools`, SF Symbols' `wrench.and.screwdriver`, Material's
+  `handyman`. An alias rather than a concept of its own, since a technician is known by what
+  they carry: `:person` and `:badge` are already spoken for by a customer and an agent, and a
+  briefcase belongs to the business that employs them rather than to whoever turns up. 320
+  names now resolve, 141 of them aliases.
+
 ## [3.7.0] - 2026-09-17
 
 - **Feature.** `:sort_asc` and `:sort_desc` are the order a column is sorted in, beside the
