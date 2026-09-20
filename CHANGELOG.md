@@ -5,6 +5,15 @@ what decides both whether a reader can take it and what the next version number 
 
 ## [Unreleased]
 
+## [3.10.0] - 2026-09-19
+
+- **Feature.** Eight names a home services app looks a record up by, each an alias over a
+  picture already drawn: `:advice` replies, `:band` is priced by a tag, `:enrichment` is
+  the document an answer arrives as, `:line` is one boxed item of a job, `:nomination` is
+  the gift of one, `:opening` is the stopwatch a working window runs on, `:service` is the
+  wrench that does it, and `:skill` is the star it earns. 329 names now resolve, 150 of
+  them aliases.
+
 ## [3.9.0] - 2026-09-18
 
 - **Feature.** `:visit` is a call somebody pays at an appointed time, drawn as the `:clock`

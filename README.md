@@ -135,7 +135,7 @@ drawn out. `Unicon.actions` names them all.
 | `:book` |  | ![book](vendor/bootstrap-icons/book.svg "book") | ![book](vendor/sf-symbols/book.svg "book") | ![book](vendor/material-symbols/book.svg "book") |
 | `:bookmark` |  | ![bookmark](vendor/bootstrap-icons/bookmark.svg "bookmark") | ![bookmark](vendor/sf-symbols/bookmark.svg "bookmark") | ![bookmark](vendor/material-symbols/bookmark.svg "bookmark") |
 | `:bookmarked` |  | ![bookmark-fill](vendor/bootstrap-icons/bookmark-fill.svg "bookmark-fill") | ![bookmark.fill](vendor/sf-symbols/bookmark.fill.svg "bookmark.fill") | ![bookmark_added](vendor/material-symbols/bookmark_added.svg "bookmark_added") |
-| `:box` | `:inventory` `:item` `:package` `:product` | ![box](vendor/bootstrap-icons/box.svg "box") | ![shippingbox](vendor/sf-symbols/shippingbox.svg "shippingbox") | ![inventory_2](vendor/material-symbols/inventory_2.svg "inventory_2") |
+| `:box` | `:inventory` `:item` `:line` `:package` `:product` | ![box](vendor/bootstrap-icons/box.svg "box") | ![shippingbox](vendor/sf-symbols/shippingbox.svg "shippingbox") | ![inventory_2](vendor/material-symbols/inventory_2.svg "inventory_2") |
 | `:brand` |  | ![c-circle](vendor/bootstrap-icons/c-circle.svg "c-circle") | ![c.circle](vendor/sf-symbols/c.circle.svg "c.circle") | ![copyright](vendor/material-symbols/copyright.svg "copyright") |
 | `:briefcase` | `:provider` | ![briefcase](vendor/bootstrap-icons/briefcase.svg "briefcase") | ![briefcase](vendor/sf-symbols/briefcase.svg "briefcase") | ![work](vendor/material-symbols/work.svg "work") |
 | `:brush` |  | ![brush](vendor/bootstrap-icons/brush.svg "brush") | ![paintbrush](vendor/sf-symbols/paintbrush.svg "paintbrush") | ![brush](vendor/material-symbols/brush.svg "brush") |
@@ -159,7 +159,7 @@ drawn out. `Unicon.actions` names them all.
 | `:contact` |  | ![person-rolodex](vendor/bootstrap-icons/person-rolodex.svg "person-rolodex") | ![person.crop.circle](vendor/sf-symbols/person.crop.circle.svg "person.crop.circle") | ![contacts](vendor/material-symbols/contacts.svg "contacts") |
 | `:credit_card` | `:charge` `:payment` `:transaction` | ![credit-card](vendor/bootstrap-icons/credit-card.svg "credit-card") | ![creditcard](vendor/sf-symbols/creditcard.svg "creditcard") | ![credit_card](vendor/material-symbols/credit_card.svg "credit_card") |
 | `:display` | `:screen` | ![display](vendor/bootstrap-icons/display.svg "display") | ![display](vendor/sf-symbols/display.svg "display") | ![monitor](vendor/material-symbols/monitor.svg "monitor") |
-| `:document` | `:file` `:form` `:page` `:post` `:summary` | ![file-earmark](vendor/bootstrap-icons/file-earmark.svg "file-earmark") | ![doc](vendor/sf-symbols/doc.svg "doc") | ![description](vendor/material-symbols/description.svg "description") |
+| `:document` | `:enrichment` `:file` `:form` `:page` `:post` `:summary` | ![file-earmark](vendor/bootstrap-icons/file-earmark.svg "file-earmark") | ![doc](vendor/sf-symbols/doc.svg "doc") | ![description](vendor/material-symbols/description.svg "description") |
 | `:droplet` |  | ![droplet](vendor/bootstrap-icons/droplet.svg "droplet") | ![drop](vendor/sf-symbols/drop.svg "drop") | ![water_drop](vendor/material-symbols/water_drop.svg "water_drop") |
 | `:envelope` | `:email` | ![envelope](vendor/bootstrap-icons/envelope.svg "envelope") | ![envelope](vendor/sf-symbols/envelope.svg "envelope") | ![mail](vendor/material-symbols/mail.svg "mail") |
 | `:eye` | `:view` | ![eye](vendor/bootstrap-icons/eye.svg "eye") | ![eye](vendor/sf-symbols/eye.svg "eye") | ![visibility](vendor/material-symbols/visibility.svg "visibility") |
@@ -170,7 +170,7 @@ drawn out. `Unicon.actions` names them all.
 | `:folder` | `:project` | ![folder](vendor/bootstrap-icons/folder.svg "folder") | ![folder](vendor/sf-symbols/folder.svg "folder") | ![folder](vendor/material-symbols/folder.svg "folder") |
 | `:franchise` |  | ![building](vendor/bootstrap-icons/building.svg "building") | ![building.2](assets/undrawn.svg "building.2") | ![corporate_fare](vendor/material-symbols/corporate_fare.svg "corporate_fare") |
 | `:gear` | `:configuration` `:setting` | ![gear](vendor/bootstrap-icons/gear.svg "gear") | ![gearshape](vendor/sf-symbols/gearshape.svg "gearshape") | ![settings](vendor/material-symbols/settings.svg "settings") |
-| `:gift` | `:coupon` `:offer` | ![gift](vendor/bootstrap-icons/gift.svg "gift") | ![gift](vendor/sf-symbols/gift.svg "gift") | ![redeem](vendor/material-symbols/redeem.svg "redeem") |
+| `:gift` | `:coupon` `:nomination` `:offer` | ![gift](vendor/bootstrap-icons/gift.svg "gift") | ![gift](vendor/sf-symbols/gift.svg "gift") | ![redeem](vendor/material-symbols/redeem.svg "redeem") |
 | `:globe` | `:country` `:site` | ![globe](vendor/bootstrap-icons/globe.svg "globe") | ![globe](vendor/sf-symbols/globe.svg "globe") | ![public](vendor/material-symbols/public.svg "public") |
 | `:grid` |  | ![grid](vendor/bootstrap-icons/grid.svg "grid") | ![square.grid.2x2](vendor/sf-symbols/square.grid.2x2.svg "square.grid.2x2") | ![grid_view](vendor/material-symbols/grid_view.svg "grid_view") |
 | `:hammer` | `:job` | ![hammer](vendor/bootstrap-icons/hammer.svg "hammer") | ![hammer](vendor/sf-symbols/hammer.svg "hammer") | ![hardware](vendor/material-symbols/hardware.svg "hardware") |
@@ -212,7 +212,7 @@ drawn out. `Unicon.actions` names them all.
 | `:question` | `:answer` | ![question-circle](vendor/bootstrap-icons/question-circle.svg "question-circle") | ![questionmark.circle](vendor/sf-symbols/questionmark.circle.svg "questionmark.circle") | ![help](vendor/material-symbols/help.svg "help") |
 | `:rain` |  | ![cloud-rain](vendor/bootstrap-icons/cloud-rain.svg "cloud-rain") | ![cloud.rain](vendor/sf-symbols/cloud.rain.svg "cloud.rain") | ![rainy](vendor/material-symbols/rainy.svg "rainy") |
 | `:receipt` |  | ![receipt](vendor/bootstrap-icons/receipt.svg "receipt") | ![receipt](assets/undrawn.svg "receipt") | ![receipt](vendor/material-symbols/receipt.svg "receipt") |
-| `:reply` |  | ![reply](vendor/bootstrap-icons/reply.svg "reply") | ![arrowshape.turn.up.left](vendor/sf-symbols/arrowshape.turn.up.left.svg "arrowshape.turn.up.left") | ![reply](vendor/material-symbols/reply.svg "reply") |
+| `:reply` | `:advice` | ![reply](vendor/bootstrap-icons/reply.svg "reply") | ![arrowshape.turn.up.left](vendor/sf-symbols/arrowshape.turn.up.left.svg "arrowshape.turn.up.left") | ![reply](vendor/material-symbols/reply.svg "reply") |
 | `:ruler` |  | ![rulers](vendor/bootstrap-icons/rulers.svg "rulers") | ![ruler](vendor/sf-symbols/ruler.svg "ruler") | ![straighten](vendor/material-symbols/straighten.svg "straighten") |
 | `:search` |  | ![search](vendor/bootstrap-icons/search.svg "search") | ![magnifyingglass](vendor/sf-symbols/magnifyingglass.svg "magnifyingglass") | ![search](vendor/material-symbols/search.svg "search") |
 | `:server` |  | ![hdd-rack](vendor/bootstrap-icons/hdd-rack.svg "hdd-rack") | ![server.rack](vendor/sf-symbols/server.rack.svg "server.rack") | ![dns](vendor/material-symbols/dns.svg "dns") |
@@ -225,11 +225,11 @@ drawn out. `Unicon.actions` names them all.
 | `:snow` |  | ![snow](vendor/bootstrap-icons/snow.svg "snow") | ![snowflake](vendor/sf-symbols/snowflake.svg "snowflake") | ![weather_snowy](vendor/material-symbols/weather_snowy.svg "weather_snowy") |
 | `:speedometer` | `:dashboard` `:evaluation` | ![speedometer](vendor/bootstrap-icons/speedometer.svg "speedometer") | ![gauge](vendor/sf-symbols/gauge.svg "gauge") | ![speed](vendor/material-symbols/speed.svg "speed") |
 | `:square` |  | ![square](vendor/bootstrap-icons/square.svg "square") | ![square](vendor/sf-symbols/square.svg "square") | ![square](vendor/material-symbols/square.svg "square") |
-| `:star` | `:rating` `:review` | ![star](vendor/bootstrap-icons/star.svg "star") | ![star](vendor/sf-symbols/star.svg "star") | ![star](vendor/material-symbols/star.svg "star") |
-| `:stopwatch` |  | ![stopwatch](vendor/bootstrap-icons/stopwatch.svg "stopwatch") | ![stopwatch](vendor/sf-symbols/stopwatch.svg "stopwatch") | ![timer](vendor/material-symbols/timer.svg "timer") |
+| `:star` | `:rating` `:review` `:skill` | ![star](vendor/bootstrap-icons/star.svg "star") | ![star](vendor/sf-symbols/star.svg "star") | ![star](vendor/material-symbols/star.svg "star") |
+| `:stopwatch` | `:opening` | ![stopwatch](vendor/bootstrap-icons/stopwatch.svg "stopwatch") | ![stopwatch](vendor/sf-symbols/stopwatch.svg "stopwatch") | ![timer](vendor/material-symbols/timer.svg "timer") |
 | `:sun` |  | ![sun](vendor/bootstrap-icons/sun.svg "sun") | ![sun.max](vendor/sf-symbols/sun.max.svg "sun.max") | ![light_mode](vendor/material-symbols/light_mode.svg "light_mode") |
 | `:table` |  | ![table](vendor/bootstrap-icons/table.svg "table") | ![tablecells](vendor/sf-symbols/tablecells.svg "tablecells") | ![table_chart](vendor/material-symbols/table_chart.svg "table_chart") |
-| `:tag` | `:category` `:label` `:price` | ![tag](vendor/bootstrap-icons/tag.svg "tag") | ![tag](vendor/sf-symbols/tag.svg "tag") | ![sell](vendor/material-symbols/sell.svg "sell") |
+| `:tag` | `:band` `:category` `:label` `:price` | ![tag](vendor/bootstrap-icons/tag.svg "tag") | ![tag](vendor/sf-symbols/tag.svg "tag") | ![sell](vendor/material-symbols/sell.svg "sell") |
 | `:task` | `:todo` | ![check2-square](vendor/bootstrap-icons/check2-square.svg "check2-square") | ![checklist](vendor/sf-symbols/checklist.svg "checklist") | ![task_alt](vendor/material-symbols/task_alt.svg "task_alt") |
 | `:terminal` | `:api` `:prompt` | ![terminal](vendor/bootstrap-icons/terminal.svg "terminal") | ![terminal](vendor/sf-symbols/terminal.svg "terminal") | ![terminal](vendor/material-symbols/terminal.svg "terminal") |
 | `:thumbs_down` |  | ![hand-thumbs-down](vendor/bootstrap-icons/hand-thumbs-down.svg "hand-thumbs-down") | ![hand.thumbsdown](vendor/sf-symbols/hand.thumbsdown.svg "hand.thumbsdown") | ![thumb_down](vendor/material-symbols/thumb_down.svg "thumb_down") |
@@ -249,7 +249,7 @@ drawn out. `Unicon.actions` names them all.
 | `:waveform` | `:audio` `:echo` | ![soundwave](vendor/bootstrap-icons/soundwave.svg "soundwave") | ![waveform](vendor/sf-symbols/waveform.svg "waveform") | ![graphic_eq](vendor/material-symbols/graphic_eq.svg "graphic_eq") |
 | `:wifi` |  | ![wifi](vendor/bootstrap-icons/wifi.svg "wifi") | ![wifi](vendor/sf-symbols/wifi.svg "wifi") | ![wifi](vendor/material-symbols/wifi.svg "wifi") |
 | `:window` | `:app` | ![window](vendor/bootstrap-icons/window.svg "window") | ![macwindow](vendor/sf-symbols/macwindow.svg "macwindow") | ![web_asset](vendor/material-symbols/web_asset.svg "web_asset") |
-| `:wrench` |  | ![wrench](vendor/bootstrap-icons/wrench.svg "wrench") | ![wrench](vendor/sf-symbols/wrench.svg "wrench") | ![build](vendor/material-symbols/build.svg "build") |
+| `:wrench` | `:service` | ![wrench](vendor/bootstrap-icons/wrench.svg "wrench") | ![wrench](vendor/sf-symbols/wrench.svg "wrench") | ![build](vendor/material-symbols/build.svg "build") |
 
 A dashed circle is a symbol the Mac that drew this table could not put an outline to: newer than the SF Symbols 5 set it knows, or one it draws but the renderer would name no glyph for. Hover it for the name, which resolves in an app all the same.
 <!-- concepts:end -->
